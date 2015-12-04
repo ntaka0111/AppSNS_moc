@@ -1,0 +1,165 @@
+html,body,.main {
+  height: 100%;
+  display: block;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body{
+  margin: 0;
+  background-image: url(../image/plogin-back.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header{
+  position: fixed;
+  height: 70px;
+  width: 90%;
+  padding: 5px 5%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.header-design img{
+  float: left;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.header-design a {
+  color: rgba(0,0,0,0.6);
+}
+
+form {
+  float: right;
+  height: 70px;
+}
+
+form input {
+  font-size: 12px;
+  height: 18px;
+  width: 150px;
+  padding: 0px 15px;
+  margin: 6px 0px;
+  border-radius: 5px;
+}
+
+ul {
+  padding: 0;
+  margin: 0; 
+  display: inline-block;
+}
+
+li {
+  height: 32px;
+}
+
+label input {
+  width: 10px;
+  height: 12px;
+  margin: 0 0 10px 30px;
+}
+
+span {
+  font-size: 10px;
+  color: white;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.btn-login {
+  margin-left: 60px;
+}
+
+.login {
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 15px;
+  margin: 6px 0px;
+}
+
+.btn {
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  font-weight: 100;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn:hover{
+  opacity: 0.7;
+}
+
+/*メッセージ*/
+.top-text{
+ background-color: rgba(0,0,0,0.4);
+  background-size: cover;
+  padding-top:100px;
+  color: white;
+  text-align: center;
+  
+}
+
+.container{
+  margin: 0 auto;
+}
+
+.main h1{
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.main p{
+  font-size: 14px;
+
+}
+
+.main img{
+  height: 100px;
+}
+
+.signup{
+  background-color: #239b76;
+  float: center;
+}
+
+.facebook{
+  background-color: #3b5998;
+  margin-right: 15px;
+}
+
+.twitter{
+  background-color: #55acee;
+}
+
+.github{
+  background-color: #2b2b2b;
+  margin-right: 15px;
+}
+
+/*ボタン*/
+.btn{
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  position: center;
+}
+
+.btn:hover{
+  opacity: 1;
+}
+
+.touroku {
+  position: center;
+}

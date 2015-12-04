@@ -1,0 +1,87 @@
+
+body{
+  margin: 0;
+  background-image: url(../image/glogin-back.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a{
+  text-decoration: none;
+}
+
+.top-text{
+  background-color: rgba(0,0,0,0.4);
+  background-size: cover;
+  padding-top:100px;
+}
+
+.container{
+  margin: 0 auto;
+  border-bottom: 1px #000;
+}
+
+.main {
+  color: white;
+  text-align: center;
+}
+
+.main h1{
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.main p{
+  font-size: 14px;
+}
+
+.main img{
+  height: 100px;
+}
+
+.signup{
+  background-color: #239b76;
+  float: center;
+}
+
+.facebook{
+  background-color: #3b5998;
+  margin-right: 15px;
+}
+
+.twitter{
+  background-color: #55acee;
+}
+
+.btn{
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  position: center;
+}
+
+.btn:hover{
+  opacity: 1;
+}
+
+header{
+  position: fixed;
+  width:90%;
+  padding: 15px 5%;
+  height: 40px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.header-design img{
+  float: left;
+  height: 40px;
+}
+
+.header-design ul{
+  float: right;
+}
+
