@@ -1,20 +1,25 @@
 html,body,.main {
-  height: 100%;
+  height: 120%;
   display: block;
   margin: 0;
 }
 
 a {
   text-decoration: none;
+  color: white;
 }
 
-body{
+html {
   margin: 0;
   background-image: url(../image/plogin-back.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+body {
+  background-color: rgba(0,0,0,0.4);
 }
 
 header{
@@ -35,12 +40,12 @@ header{
   color: rgba(0,0,0,0.6);
 }
 
-form {
+.login-form form {
   float: right;
   height: 70px;
 }
 
-form input {
+.login-form form input {
   font-size: 12px;
   height: 18px;
   width: 150px;
@@ -49,17 +54,17 @@ form input {
   border-radius: 5px;
 }
 
-ul {
+.login-form ul {
   padding: 0;
   margin: 0; 
   display: inline-block;
 }
 
-li {
+.login-form li {
   height: 32px;
 }
 
-label input {
+.login-form label input {
   width: 10px;
   height: 12px;
   margin: 0 0 10px 30px;
@@ -101,9 +106,7 @@ label {
 
 /*メッセージ*/
 .top-text{
- background-color: rgba(0,0,0,0.4);
-  background-size: cover;
-  padding-top:100px;
+  padding-top: 15%;
   color: white;
   text-align: center;
   
@@ -128,10 +131,13 @@ label {
 }
 
 .signup{
+  padding: 8px 24px;
   background-color: #239b76;
   float: center;
+  margin-top: 15px;
 }
 
+/*
 .facebook{
   background-color: #3b5998;
   margin-right: 15px;
@@ -145,10 +151,10 @@ label {
   background-color: #2b2b2b;
   margin-right: 15px;
 }
+*/
 
 /*ボタン*/
 .btn{
-  padding: 8px 24px;
   color: white;
   display: inline-block;
   opacity: 0.9;
@@ -160,6 +166,44 @@ label {
   opacity: 1;
 }
 
+
+
+form {
+  float: center;
+}
+
 .touroku {
-  position: center;
+  float: center;
+}
+
+dt {
+  color: white;
+}
+
+dd {
+  margin: 0;
+}
+
+.btn-signup {
+  padding: 8px 24px;
+  background-color: #239b76;
+  float: center;
+}
+
+
+
+
+
+.touroku form {
+  float: center;
+  height: 70px;
+}
+
+.touroku form input {
+  font-size: 20px;
+  height: 30px;
+  width: 250px;
+  padding: 0px 15px;
+  margin: 6px 0px;
+  border-radius: 5px;
 }

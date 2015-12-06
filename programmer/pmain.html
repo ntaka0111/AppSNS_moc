@@ -15,88 +15,78 @@
 		<header>
 			<div class="container">
 				<div class="header-design">
-					<img src="../image/AppSNS-logo.png">
-					<form>
-						<ul style="list-style:none;">
-							<li>
-								<input type="text" id="email" placeholder="メールアドレス">
-							</li>
-							<li>
-								<input type="text" id="email" placeholder="パスワード">
-							</li>
-						</ul>
-						<ul style="list-style:none;">
-							<li>
-								<label class="remember">
-			    					<input type="checkbox" value="1" name="remember_me" checked="checked">
-									<span>ログインしたままにする</span>
-								</label>
-								<div class="btn-login">
-									<a href="#" class="btn login">ログイン</a>
-								</div>
-							</li>
-						</ul>
-					</form>
+					<div class="login-form">
+						<img src="../image/AppSNS-logo.png">
+						<form>
+							<ul style="list-style:none;">
+								<li>
+									<input type="text" id="email" placeholder="メールアドレス">
+								</li>
+								<li>
+									<input type="text" id="email" placeholder="パスワード">
+								</li>
+							</ul>
+							<ul style="list-style:none;">
+								<li>
+									<label class="remember">
+				    					<input type="checkbox" value="1" name="remember_me" checked="checked">
+										<span>ログインしたままにする</span>
+									</label>
+									<div class="btn-login">
+										<a href="#" class="btn login">ログイン</a>
+									</div>
+								</li>
+							</ul>
+						</form>
+					</div>
 				</div>
 			</div>
 		</header>
 		<div class="top-text">
 			<div class="container">
-				<div class="main"style="text-align:center">
+				<div class="main" style="text-align:center" name="message">
 					<img src="../image/AppSNS-logo.png">
 					<h1>あなたの作品をもっと世界へ</h1>
 					<p><br />AppSNSは無料のアプリケーション共有SNSです。<br /><br />作り上げたものを公開し、エンジニア同士互いにフィードバックを行い、より技術を高めませんか？</p><br /><br />
-					<a href="#touroku" class="btn signup">無料で始める</a>
-					<!-- <p>or sign up with</p>
-					<a href="#" class="btn github"><span class="fa fa-github"></span>GitHubで登録</a>
-					<a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-					<a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a> -->
-
-		<div class="row">
-          <div class="col-md-4"></div>
-          	<div class="col-md-4">
-                <div class="span3">
-                    <diz class="touroku">
-	                    <h3 style="text-align:center">【無料で新規登録】</h3><br>
-	                    <dl>
-	                    <form style="text-align:center">
-	                    	
-	                    <dt><label style="margin-right:220px;">First Name</label></dt>
-	                    <dd><input type="text" name="firstname" class="span3" style="width:300px;height:25px"></dd>
-
-	                    <dt><label style="margin-right:220px;">Last Name</label></dt>
-	                    <dd><input type="text" name="lastname" class="span3"style="width:300px;height:25px"></dd>
-
-	                    <dt><label style="margin-right:200px;">Email Address</label></dt>
-	                    <dd><input type="email" name="email" class="span3"style="width:300px;height:25px"></dd>
-
-	                    <!-- <dt><label>Username</label></dt>
-	                    <dd><input type="text" name="username" class="span3"style="width:300px;height:25px"></dd> -->
-
-	                    <dt><label style="margin-right:220px;">Password</label></dt>
-	                    <dd><input type="password" name="password" class="span3"style="width:300px;height:25px"></dd>
-
-	                    <dt><label><input type="checkbox" name="terms"> I agree with the <a href="#">Terms and Conditions</a>.</label></dt><br>
-	                    <dd ><input type="submit" value="Sign up" class="btn btn-primary pull-left" style="margin-left:80px;"></dd>
 					</div>
 
-                    <div class="clearfix"></div>
-                    </form>
-                </dl>
-            	</div>
-       	 	</div>
-        </div>
+					<!-- JavaScript -->
+					<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+					<script type="text/javascript">
+					$(function(){
+						// 「id="jQueryBox"」を非表示
+						$("#jQueryBox").css("display", "none");
 
+						// 「id="jQueryPush"」がクリックされた場合
+						$("#jQueryPush").click(function(){
+							// 「id="jQueryBox"」の表示、非表示を切り替える
+							$("#jQueryBox").toggle();
+						});
+					});
+					</script>
 
+					<a href="#touroku"><div id="jQueryPush" class="btn btn-signup" input type="button" value="表示" onclick="hyoji2(0)">無料で始める</div></a>
+					<div id="jQueryBox">
+					    <div class="touroku">
+							<a name="touroku">
+								<form style="text-align:center">
+									</br>
+									<dt>アカウント名</dt>
+									<dd><input type="text" name="account" class="span3"></dd>
+
+									<dt>メールアドレス</dt>
+									<dd><input type="email" name="email" class="span3"></dd>
+
+									<dt>パスワード</dt>
+									<dd><input type="password" name="password" class="span3"></dd>
+
+									<a class="btn signup" input type="submit" value="Sign up">Sign up</a>
+								</form>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</body>
 </html>
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/form.js"></script>
