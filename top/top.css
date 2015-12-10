@@ -18,7 +18,7 @@ header{
 	height: 50px;
 	width: 90%;
 	padding: 5px 5%;
-	background-color: #87aaaa;
+	background-color: #191970;
 	box-shadow: 0 0 2px #666,0 0 8px #222;
 }
 
@@ -46,7 +46,7 @@ header{
 .sidebar {
 	position: fixed;
 	height:100%;
-	width: 210px;
+	width: 230px;
 	margin-top: 60px;
 	float: left;
 	padding: 0;
@@ -54,26 +54,9 @@ header{
 }
 
 .sidebar .profile-icon {
-	margin-bottom: 20px;
 	height: 70px;
 	width: 70px;
-    margin: 60px;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.sidebar ul {
-	height: 100%;
-	list-style: none;
-	width: 90%;
-	padding: 5%;
-	margin-bottom: 10px;
-	display: inline-block;
-}
-
-.sidebar li {
-	height: 32px;
-	text-align: center;
+	margin: 20px 0 10px 85px;
 }
 
 .sidebar li p{
@@ -87,17 +70,105 @@ header{
 	width: 70px;
 }
 
+.sidebar .profile ul {
+	margin: 0 10px 0 10px;
+	width: 190px;
+	height: 100%;
+	list-style: none;
+	padding: 10px;
+	display: inline-block;
+}
+
+.sidebar .profile li {
+	height: 32px;
+	text-align: center;
+}
+
+.sidebar .profile h4 {
+	margin: 0;
+}
+
+
+/* フォロー・フォロワー */
+
 .follow {
-	float: center;
+	margin: 0 10px 0 10px;
+}
+
+.f-f {
+	display: inline-block;
+	width: 210px;
+}
+
+.f-f .following:hover {
+	opacity: 0.7;
+}
+
+.f-f .follower:hover {
+	opacity: 0.7;
+}
+
+.f-f h4 {
+	margin: 0;
+	color: #000080;
+}
+
+.f-f p {
+	font-size: 12px;
+	color: #000080;
 }
 
 .following {
+	text-align: center;
+	width: 104px;
+	border-right: solid 1px #EAEAEA;
+	display: inline-block;
+	float: left;
 }
 
 .follower {
+	text-align: center;
+	width: 105px;
+	display: inline-block;
+	float: left;
+}
+
+/* メインコンテンツ */
+.adds {
+	height: 280px;
+	width: 100%;
+}
+
+.main-contents {
+	height: 280px;
+	width: 70%;
+	background-color: #87cefa;
+	border-right: 1px;
+	border-color: white;
+	float: left;
+}
+
+.sub-contents1 {
+	height: 139px;
+	width: 30%;
+	background-color: white;
+	border-bottom: 1px;
+	border-color: white;
+	float: left;
+}
+
+.sub-contents2 {
+	height: 140px;
+	width: 30%;
+	background-color: blue;
+	float: left;
 }
 
 /* コンテンツ */
+
+.appli-article {
+	height: 1000px;
+}
 
 .contents {
 	height: 600px;
@@ -107,7 +178,7 @@ header{
 	padding: 0 0 5% 230px;
 }
 
-.contents #applist h1 {
+.contents h3 {
 	margin: 20px 30px 20px 30px;
 }
 
@@ -186,6 +257,10 @@ h3 {
 	height: 70px;
 	width: 70px;
 	border-radius: 50%;
+}
+
+.creater-icon img:hover {
+	opacity: 0.8;
 }
 
 .contents .application {
