@@ -1,0 +1,873 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: Small - Free Bootstrap 3 Theme
+ * Version: 1.0
+ * URL: http://blacktie.co
+ */
+ 
+/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800);
+
+/*body {
+  font-family: 'Open Sans', sans-serif;
+  background: #fff;
+  color: #f5f6f7;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  font-weight: 300; 
+
+}
+*/
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+  
+  /* =========================
+
+		GENERAL STYLES 
+
+   =========================*/
+
+
+
+#header{
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+}
+
+
+.class-header {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: fixed;
+    z-index: 200;
+    background-color:#fff;
+    border-bottom: #ff7f50 3px solid;
+}
+
+.class-header h1{
+  font-family: sans-serif;
+  color:#000;
+  float:left;
+  font-size: x-large;
+  margin-left: 10px;
+
+}
+
+
+.class-header li {
+    padding: 5px 10px 5px 10px; 
+    margin-top: 10px;
+    margin-bottom: 5px;
+    float: right;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    font-weight: bold;
+    border-left: 1px solid #fff;
+}
+
+.class-header ul{
+    list-style: none; 
+    padding:0;
+    margin-right:10px;
+}
+
+.class-header li:hover{
+    /*border-bottom: 4px solid #000;*/
+    background-color: #ff7f50;
+    /*text-shadow: #FFCC00 0px 0px 20px;*/
+    color: #fff;
+}
+
+
+.class-menu ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: inline-block;
+    float:right;
+}
+.class-menu li {
+    background: #fff;
+    width: 100px;
+    height: 40px;
+    color:#808080;
+    font-size: 15px;
+}
+
+.class-menu i{
+    font-size:30px; 
+    padding: 5px 5px 5px 5px; 
+    margin-top: 12px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color:#000;
+}
+
+.class-menu i:hover{
+    color:#ff7f50;
+    /*text-shadow: #FFCC00 0px 0px 20px;*/
+    
+}
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none; }
+
+a:link,
+a:visited,
+a:active {
+  font-weight: 600;
+  color: #000;
+  text-decoration: none; }
+
+
+  /*a:link:hover,*/
+/*  a:visited:hover,*/
+ /* a:active:hover */
+ #categories-ul li:hover{
+    background-color: #ff7f50;
+    color:#fff;
+   /* -webkit-transition: color 1s;
+    -moz-transition: color 1s;
+    -ms-transition: color 1s;
+    -o-transition: color 1s;
+    transition: color 1s; */}
+
+
+
+
+
+.nav {
+  position: fixed;
+  width: 30px;
+  height: 84px;
+  z-index: 100;
+  right: 0;
+  top: 50%;
+  margin-top: -42px; }
+  .nav a {
+    text-indent: -9999px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: rgba(245, 246, 247, 0.4);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    -webkit-transition: background 0.5s;
+    -moz-transition: background 0.5s;
+    -ms-transition: background 0.5s;
+    -o-transition: background 0.5s;
+    transition: background 0.5s; }
+    .nav a:hover {
+      background: #f5f6f7;
+      -webkit-transition: background 1s;
+      -moz-transition: background 1s;
+      -ms-transition: background 1s;
+      -o-transition: background 1s;
+      transition: background 1s; }
+
+.mb-7 {
+  margin-bottom: 70px; }
+  
+.centered {
+	text-align: center;
+}
+
+
+/* =========================
+
+		DRIBBBLE FEED 
+
+   =========================*/
+.d-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  padding-top: 25%;
+  line-height: 20px;
+  background: rgba(231, 76, 60, 0.9); }
+  .d-hover p {
+    display: block !important;
+    z-index: 500;
+    margin-top: 25px;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300; }
+
+ul.slides {
+  line-height: 0px;
+  padding: 0px; }
+  
+ul.slides li {
+display: inline-block;
+width: 25%; }
+
+  
+ul.slides li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+ul.slides li a:hover .d-hover {
+  display: block; }
+	    
+ul.slides li a img {
+	width: 100%; }
+
+ul.slides li a p {
+	display: none; }
+
+ul, menu, dir {
+	display: block;
+	list-style-type: disc;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+@media only screen and (max-width: 1000px) {
+      ul.slides li {
+        width: 33%; } }
+    @media only screen and (max-width: 767px) {
+      ul.slides li {
+        width: 50%; } }
+    ul.slides li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      ul.slides li a:hover .d-hover {
+        display: block; }
+      ul.slides li a img {
+        width: 100%; }
+      ul.slides li a p {
+        display: none; }
+/* =========================
+
+			FOOTER 
+
+   =========================*/
+#networks {
+	width: 100%;
+	height: 50px;
+	padding-top: 20px;
+}
+/*
+#networks i {
+	font-size: 60px;
+	color: white;
+	padding: 18px;
+}
+*/
+/* =========================
+
+      投稿画面
+
+   =========================*/
+
+/*@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+body{margin-top:50px;background: rgb(36, 39, 41);}*/
+
+.zentai{
+   width:100%;
+   height:800px;
+   padding-top:70px;
+}
+
+.toko-menu{
+    height:60px;
+    background-color: #f5f5f5;
+
+}
+
+.toko-menu-in{
+  padding-top:10px;
+  padding-bottom:10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+  width:960px;
+  height:60px;
+}
+
+.toko-menu-categories {
+  float:left;
+    z-index: -1;
+      background-color: #fff;
+    border-radius: 2px;
+    border:1px solid #d3d3d3;
+     color:#000;
+     font-size: 15px;
+  }
+    option {
+    font-weight: normal;
+    display: block;
+    padding: 0px 2px 1px;
+    white-space: pre;
+    min-height: 1.2em;
+}
+
+.toko-menu-edit {
+    float: right;
+    width: 440px;
+    margin: 2px 0 0;
+}
+
+.edit-btn{
+    display: block;
+    float: right;
+    width: 100px;
+    height: 35px;
+    line-height: 37px;
+    margin: 0 0 0 5px;
+    font-size: 13px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    border:1px solid #d3d3d3;
+    color:#808080;
+    padding-top: 0;
+}
+
+.edit-btn:hover{
+  background-color:#d3d3d3;
+}
+
+  .kari-col-md-12{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
+
+.toko-main{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    width:960px;
+    height:165px;
+    margin-top:20px;
+    
+    display: -webkit-inline-box;
+
+}
+
+.toko-image {
+    display: block;
+    position: relative;
+    float: left;
+    width: 160px;
+}
+
+.toko-image img{
+  vertical-align: bottom;
+}
+
+
+.toko-text{
+    position: relative;
+    float: right;
+    width: 785px;
+    height:165px;
+    border-radius: 2px;
+    margin-left: 15px;
+}
+
+.toko-text input{
+    padding: 10px;
+    font-size: 20px;
+    height: 45px;
+    width:100%;
+    line-height: 45px;
+    border-radius: 2px;
+    border:1px solid #d3d3d3;
+}
+
+.toko-text textarea{
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border:1px solid #d3d3d3;
+    height:100px;
+}
+
+.toko-text-p{
+    position: absolute;
+    right: 0;
+    color: #000;
+    font-size: 12px;
+    width:61px;
+    height:16px;
+    
+}
+
+.file-main{
+  width:960px;
+  height:36px;
+  margin-right:auto; 
+  margin-left:auto;
+  position: relative;  
+
+}
+
+.file-button{
+  float: left;
+  width:230px;
+  height:18px;
+  max-width: 230px;
+  color:#000;
+  font-size: 12px;
+
+}
+
+#file-button-input{
+display: inline-flex;
+}
+
+
+.file-settei{
+  float: left;
+}
+
+#file-settei-input{
+   width:70px;
+  height:30px;
+  margin-right: 10px;
+  font-size: 12px;
+  background-color:#f5f5f5;
+  border:solid 1px #dcdcdc;
+  line-height: normal;
+}
+
+
+.edit-main{
+    width: 960px;
+    min-height: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.edit-out{
+    margin-top: 20px;
+    border: 1px solid #e7e7e7;
+}
+
+.editmemu{
+    outline: 0;
+    font-weight: 400;
+    font-variant: normal;
+    background: 0 0;
+}
+
+
+
+/*ul*/
+.edit-tool{
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e7e7e7;
+    width:958px;
+    height:50px;
+    font-size: 12px;
+
+    outline: 0;
+    font-weight: 400;
+    font-variant: normal;
+
+      display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+/*li*/
+.edit-tool-text{
+     float: left;
+     width:71px;
+     height:49px;
+     
+     
+}
+.edit-tool-image{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+    
+}
+.edit-tool-quote{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-headline{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-link{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-twitter{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-product{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-spot{
+     float: left;
+     width:71px;
+     height:49px;
+     border-left:#fff solid 1px;
+}
+.edit-tool-movie{
+     float: left;
+     width:71px;
+     height:49px;
+     border-right:#fff solid 1px;
+}
+
+.edit-tool i{
+  font-size:20px;
+  margin-top:7px;
+  color:#808080;
+
+
+}
+
+.edit-tool p{
+font-size:10px;
+padding-top:5px;
+color:#808080;
+}
+
+
+.edit-tool li:hover{
+  background-color:#dcdcdc;
+  cursor: pointer;
+}
+
+
+
+/*
+
+.edit-tool-text  a{
+    display: block;
+    width: 70px;
+    height: 49px;
+    background-image: url(https://assets.mery.jp/1449638204321/images/editMenu.4e1c96b8.png);
+    background-repeat: no-repeat;
+    border-right: 1px solid #fff;
+    text-indent: -9999px;
+    background-position: left top;
+    padding-right: 1px;
+}
+
+.edit-tool-text a{
+  background-position: left top;
+}
+*/
+/*
+.edit-tool-image  img{
+    display: block;
+    width: 70px;
+    height: 49px;
+    background-image: url(assets/img/iconmonstr-pencil-2-icon-256.png);
+    background-repeat: no-repeat;
+    border-right: 1px solid #fff;
+    text-indent: -9999px;
+}
+
+.edit-tool-image{
+    background-position: -71px top;
+}
+*/
+
+.edit-tool-text a:visited{
+    color: #666;
+    text-decoration: none;
+}
+.edit-tool-text a:link{
+    color: #666;
+    text-decoration: none;
+}
+
+.new_item{
+padding: 20px;
+background-color:#f5f5f5;
+background-color: #fff;
+width:958px;
+height:40px;
+}
+
+
+li{
+  list-style:none;
+}
+
+/*===========================================
+　↓　作成するサイト（ヘッダーだけcssがあればいい）
+　
+===========================================
+*/html,body,.main {
+  height: 120%;
+  display: block;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+html {
+  margin: 0;
+  background-image: url(../image/plogin-back.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  background-color: #fff;
+  text-align: center;
+}
+
+header{
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  padding: 5px 5%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 100;
+}
+
+.header-design img{
+  float: left;
+  margin-top: 10px;
+  height: 50px;
+}
+
+.header-design a {
+  color: rgba(0,0,0,0.6);
+}
+
+.login-form form {
+  float: right;
+  height: 70px;
+}
+
+.login-form form input {
+  font-size: 12px;
+  height: 18px;
+  width: 150px;
+  padding: 0px 15px;
+  margin: 6px 0px;
+  border-radius: 5px;
+}
+
+.login-form ul {
+  padding: 0;
+  margin: 0; 
+  display: inline-block;
+}
+
+.login-form li {
+  height: 32px;
+}
+
+.login-form label input {
+  width: 10px;
+  height: 12px;
+  margin: 0 0 10px 30px;
+}
+
+span {
+  font-size: 10px;
+  color: white;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.btn-login {
+  margin-left: 60px;
+}
+
+.login {
+  font-size: 10px;
+  background-color: white;
+  padding: 2px 15px;
+  margin: 6px 0px;
+}
+
+.btn {
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  font-weight: 100;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.btn:hover{
+  opacity: 0.7;
+}
+
+/*メッセージ*/
+.top-text{
+  padding-top: 15%;
+  color: white;
+  text-align: center;
+  
+}
+
+.container{
+  margin: 0 auto;
+}
+
+.main h1{
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.main p{
+  font-size: 14px;
+
+}
+
+.main img{
+  height: 100px;
+}
+
+.signup{
+  padding: 8px 24px;
+  background-color: #239b76;
+  float: center;
+  margin-top: 15px;
+}
+
+/*
+.facebook{
+  background-color: #3b5998;
+  margin-right: 15px;
+}
+
+.twitter{
+  background-color: #55acee;
+}
+
+.github{
+  background-color: #2b2b2b;
+  margin-right: 15px;
+}
+*/
+
+/*ボタン*/
+.btn{
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  position: center;
+}
+
+.btn:hover{
+  opacity: 1;
+}
+
+
+
+form {
+  float: center;
+}
+
+.touroku {
+  float: center;
+}
+
+dt {
+  color: white;
+}
+
+dd {
+  margin: 0;
+}
+
+.btn-signup {
+  padding: 8px 24px;
+  background-color: #239b76;
+  float: center;
+}
+
+
+
+
+
+.touroku form {
+  float: center;
+  height: 70px;
+}
+
+.touroku form input {
+  font-size: 20px;
+  height: 30px;
+  width: 250px;
+  padding: 0px 15px;
+  margin: 6px 0px;
+  border-radius: 5px;
+}
+
