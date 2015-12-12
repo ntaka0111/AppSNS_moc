@@ -1,9 +1,46 @@
+<?php
+
+require('./dbconnect.php');
+
+//  //投稿を記録する.※POST送信されたものがあるかどうか
+if(!empty($_POST)){
+//  メッセージが入力されていた時
+if($_POST['message']!=''){
+
+//  //%d...整数型のデータを置換する文字
+//  //%s...文字型のデータを置換する文字
+//  //SQL文では数字をダブルクォーテーションで
+  $sql=sprintf('INSERT INTO Apple SET member_id=%d,title="%s",content="%s",created=NOW()',
+    mysqli_real_escape_string($db,$Apple['id']),
+    mysqli_real_escape_string($db,$_POST['title']),
+    mysqli_real_escape_string($db,$_POST['content'])
+    );
+    mysqli_query($db,$sql)or die (mysqli_error($db));
+    
+    header('Location:post.php');
+    exit();
+  }
+}
+
+//投稿を取得する。  
+  $sql=sprintf('SELECT Apple.text,Apple.content FROM Apple ORDER BY `created` DESC');
+  $posts=mysqli_query($db,$sql)or die (mysqli_error($db));
+
+
+//自作関数　htmlspecialcharsのショートカット
+  function h($value){
+  return htmlspecialchars($value,ENT_QUOTES,'UTF-8');
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>AppSNS エンジニア向けページ</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/kijitoko.css">
+	<link rel="stylesheet" type="text/css" href="post.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="assets/css/form.css"> -->
@@ -83,7 +120,7 @@
                  <div class="toko-text">
                     <input id="toko-text-title" name="list[title]" placeholder="まとめのタイトル"  type="text">
 
-                    <textarea id="toko-text-contents" name="list[description]" placeholder="まとめの説明（160文字以内）"></textarea>
+                    <textarea id="toko-text-contents" name="list[description]" placeholder="まとめの説明（160文字以内）"><?php echo h($content);?></textarea>
                     <p class="toko-text-p"><span class="count">0</span>/160文字</p>
                 </div>
             </div><!-- toko-main -->
@@ -103,13 +140,6 @@
                 </div>
             </form>
         </div>
-
-
-
-
-
-
-
 
 
 
@@ -160,7 +190,7 @@
 
            <div class="new_item"></div>
            <div id="list_content"><article id="col2_article" class="articleArea editItem_area">
-  <ul id="sortable" class="ui-sortable">
+  <ul id="sortable" class="ui-sortable">あああああああああああああああああ
   </ul>
 </article>
 

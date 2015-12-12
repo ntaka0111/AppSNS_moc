@@ -494,6 +494,7 @@ display: inline-flex;
     font-weight: 400;
     font-variant: normal;
     background: 0 0;
+    line-height: 1.0px; 
 }
 
 
@@ -505,7 +506,6 @@ display: inline-flex;
     width:958px;
     height:50px;
     font-size: 12px;
-
     outline: 0;
     font-weight: 400;
     font-variant: normal;
@@ -580,15 +580,14 @@ display: inline-flex;
 .edit-tool i{
   font-size:20px;
   margin-top:7px;
-  color:#808080;
+  color:#696969;
 
 
 }
 
 .edit-tool p{
 font-size:10px;
-padding-top:5px;
-color:#808080;
+color:#696969;
 }
 
 
