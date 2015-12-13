@@ -2,7 +2,7 @@ html,body,.main {
 	height: 100%;
 	display: block;
 	margin: 0;
-	background-color: #efefef;
+	background-color: #7fbfff;
 }
 
 a {
@@ -15,25 +15,30 @@ p {
 
 header{
 	position: fixed;
-	height: 50px;
-	width: 90%;
-	padding: 5px 5%;
-	background-color: #191970;
+	height: 60px;
+	width: 100%;
 	box-shadow: 0 0 2px #666,0 0 8px #222;
 }
 
-.header-design img{
-	position: absolute;
-	text-align: center;
-	height: 40px;
-	margin: 5px 40% 0 40%;
+.header-design {
+	height: 50px;
+	padding: 5px 0;
+	background-color: #000080;
 }
 
-.header-design a {
-	color: rgba(0,0,0,0.6);
+.header-design img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	margin-top: 5px;
 }
 
 /* 検索 */
+.header-design .search {
+	height: 210px;
+	opacity: 0.6;
+}
 
 /* 中身 */
 
@@ -51,12 +56,13 @@ header{
 	float: left;
 	padding: 0;
 	background-color: white;
+	box-shadow: 0 2px 0 #666,0 0 8px #222;
 }
 
 .sidebar .profile-icon {
 	height: 70px;
 	width: 70px;
-	margin: 20px 0 10px 85px;
+	margin: 20px 0 0 85px;
 }
 
 .sidebar li p{
@@ -71,9 +77,9 @@ header{
 }
 
 .sidebar .profile ul {
-	margin: 0 10px 0 10px;
+	margin: 0 10px;
 	width: 190px;
-	height: 100%;
+	height: 54px;
 	list-style: none;
 	padding: 10px;
 	display: inline-block;
@@ -88,11 +94,13 @@ header{
 	margin: 0;
 }
 
-
 /* フォロー・フォロワー */
 
 .follow {
 	margin: 0 10px 0 10px;
+	padding-top: 5px;
+	border-top: solid 1px #EAEAEA;
+	border-bottom: solid 1px #EAEAEA;
 }
 
 .f-f {
@@ -133,6 +141,48 @@ header{
 	float: left;
 }
 
+/* カテゴリ */
+.category {
+	margin: 0 10px 0 20px;
+	padding-top: 5px;	
+}
+
+.category h4 {
+	margin: 10px 0;
+}
+
+.category-top {
+	margin: 10px 10px 0 10px;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.category-top p {
+	padding: 8px 0;
+}
+
+.game {
+	margin-left: 0;
+	border-top: solid 1px #EAEAEA;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.map {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.everyday {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.study {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+
+
 /* メインコンテンツ */
 .adds {
 	height: 280px;
@@ -142,10 +192,16 @@ header{
 .main-contents {
 	height: 280px;
 	width: 70%;
-	background-color: #87cefa;
 	border-right: 1px;
 	border-color: white;
 	float: left;
+	background-image: url("../../AppSNS/image/blue-back.png");
+	background-size: cover;
+}
+
+.main-contents img {
+	width: 40%;
+	margin: 40px 30%;
 }
 
 .sub-contents1 {
@@ -164,11 +220,24 @@ header{
 	float: left;
 }
 
+.sub-contents1 img {
+	height: 139px;
+	width: 100%;
+}
+
+.sub-contents2 img {
+	height: 139px;
+	width: 100%;
+}
+
 /* コンテンツ */
 
 .appli-article {
 	height: 1000px;
+	border: 1px;
+	border-color: black;
 }
+
 
 .contents {
 	height: 600px;
@@ -192,7 +261,7 @@ header{
 
 .contents li.application {
 	vertical-align: top;
-	height: 370px;
+	height: 390px;
 	width: 280px;
 	margin-left: 30px;
 	margin-bottom: 30px;
@@ -202,8 +271,12 @@ header{
 /* 記事 */
 
 li .appli-image {
-	height: 130px;
-	background-color: gray;
+	height: 150px;
+}
+
+li .appli-image img {
+	height: 150px;
+	width: 280px;
 }
 
 li .under {
@@ -240,6 +313,10 @@ h3 {
 	margin: 5px 25px 10px 25px;
 }
 
+.app-tc h3 {
+	margin: 10px 0;
+}
+
 .reason {
 	width: 230px;
 	height: 102px;
@@ -257,10 +334,6 @@ h3 {
 	height: 70px;
 	width: 70px;
 	border-radius: 50%;
-}
-
-.creater-icon img:hover {
-	opacity: 0.8;
 }
 
 .contents .application {
