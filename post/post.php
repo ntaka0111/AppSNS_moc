@@ -1,12 +1,9 @@
 <?php
-
-require('./dbconnect.php');
-
+require('../dbconnect.php');
 //  //投稿を記録する.※POST送信されたものがあるかどうか
 if(!empty($_POST)){
 //  メッセージが入力されていた時
 if($_POST['message']!=''){
-
 //  //%d...整数型のデータを置換する文字
 //  //%s...文字型のデータを置換する文字
 //  //SQL文では数字をダブルクォーテーションで
@@ -21,62 +18,57 @@ if($_POST['message']!=''){
     exit();
   }
 }
-
 //投稿を取得する。  
-  $sql=sprintf('SELECT Apple.text,Apple.content FROM Apple ORDER BY `created` DESC');
+  $sql=sprintf('SELECT article.ttitle,article.content FROM article ORDER BY `created` DESC');
   $posts=mysqli_query($db,$sql)or die (mysqli_error($db));
-
-
 //自作関数　htmlspecialcharsのショートカット
   function h($value){
   return htmlspecialchars($value,ENT_QUOTES,'UTF-8');
   }
-
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>AppSNS エンジニア向けページ</title>
-	<link rel="stylesheet" type="text/css" href="post.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+    <meta charset="utf-8">
+    <title>AppSNS エンジニア向けページ</title>
+    <link rel="stylesheet" type="text/css" href="post.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <!-- <link rel="stylesheet" href="assets/css/form.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/timeline.css"> -->
 </head>
-	<body>
-		<header>
-			<div class="container">
-				<div class="header-design">
-					<div class="login-form">
-						<img src="../image/AppSNS-logo.png">
-						<form>
-							<ul style="list-style:none;">
-								<li>
-									<input type="text" id="email" placeholder="メールアドレス">
-								</li>
-								<li>
-									<input type="text" id="email" placeholder="パスワード">
-								</li>
-							</ul>
-							<ul style="list-style:none;">
-								<li>
-									<label class="remember">
-				    					<input type="checkbox" value="1" name="remember_me" checked="checked">
-										<span>ログインしたままにする</span>
-									</label>
-									<div class="btn-login">
-										<a href="#" class="btn login">ログイン</a>
-									</div>
-								</li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</div>
-		</header>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-design">
+                    <div class="login-form">
+                        <img src="../image/AppSNS-logo.png">
+                        <form>
+                            <ul style="list-style:none;">
+                                <li>
+                                    <input type="text" id="email" placeholder="メールアドレス">
+                                </li>
+                                <li>
+                                    <input type="text" id="email" placeholder="パスワード">
+                                </li>
+                            </ul>
+                            <ul style="list-style:none;">
+                                <li>
+                                    <label class="remember">
+                                        <input type="checkbox" value="1" name="remember_me" checked="checked">
+                                        <span>ログインしたままにする</span>
+                                    </label>
+                                    <div class="btn-login">
+                                        <a href="#" class="btn login">ログイン</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
 
 <div class="zentai">
 
@@ -201,12 +193,10 @@ if($_POST['message']!=''){
         handle: '.sort_icon',
         update: function(event, ui) {
           $("#item_form_loader").show();
-
           var new_order = $(this).sortable('toArray').toString();
           new_order = new_order.replace(/list_content,/g,'');
           new_order = new_order.split(",");
           new_order = new_order.filter(Boolean);
-
           $.post(
             '/items/sort_order',
             {
@@ -216,14 +206,12 @@ if($_POST['message']!=''){
           );
         }
       });
-
       // グローバル関数としたくないため、
       // 暫定的にlist_contentと同じ処理を記載 see mery #pull/3307
       $(".delete_item").click(function () {
         if(confirm("本当に削除してよろしいですか？？")) {
           $("#new_item").html("");
           $("#item_form_loader").show();
-
           return true;
         } else {
           return false;
@@ -251,5 +239,5 @@ if($_POST['message']!=''){
     <script src="assets/js/site-ck.js"></script>
 
 
-		</body>
+        </body>
 </html>
