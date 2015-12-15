@@ -1,3 +1,90 @@
+<?php
+	var_dump($_POST);
+	require('../dbconnect.php');
+
+	session_start();
+	//ボタンが送信されてPOST送信されたら
+	if (!empty($_POST)) 
+	{
+		//エラー項目の確認
+		if($_POST['name'] == '')
+		{
+			$error['name'] = 'blank';
+		}
+		if($_POST['email'] == '')
+		{
+			$error['email'] = 'blank';
+		}
+		if(strlen($_POST['password'])< 4 )
+		{
+			$error['password'] = 'length';
+		}
+		if($_POST['password'] == '')
+		{
+			$error['password'] = 'blank';
+		}
+		// $fileName = $_FILES['image']['name'];
+		// if(!empty($fileName))
+		// {
+		// 	$ext = substr($fileName, -3);
+		// 	if($ext != 'jpg' && $ext != 'gif')
+		// 	{
+		// 		$error['image'] = 'type';
+		// 	}
+		// }
+	
+		//正常に入力されたら
+		if(empty($error)) 
+		{
+			//画像をアップロードする
+			// $image = date('YmdHis'). $_FILES['image']['name'];
+			// move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/'.$image);
+			
+			// $_SESSION['join'] = $_POST;
+			// $_SESSION['join']['image'] = $image;
+			
+			//画面遷移(画面観の移動)
+			// header('Location: pmain.php');
+			exit();
+		}
+
+		//書き直し
+		if($_REQEST['action'] == 'rewrite')
+		{
+			$_POST = $_SESSION ['join'];
+			$error ['rewrite'] = true;
+		}
+		else
+		{
+			$_POST['name']='';
+			$_POST['email']='';
+			$_POST['password']='';
+
+
+		}
+	}
+
+		//POST送信が押されてデータが送られてきた時
+		if (!empty($_POST))
+	{
+		//登録処理を行う
+		$sql = sprintf(
+		'INSERT INTO members SET name="%s", email="%s", password="%s", created="%s"',
+		mysqli_real_escape_string($db, $_POST['account']),
+		mysqli_real_escape_string($db, $_POST['email']),
+		mysqli_real_escape_string($db, sha1($_POST['password'])),
+		date('Y-m-d H:i:s')
+		);
+		mysqli_query($db, $sql) or die(mysqli_error($db));
+
+		//SESSION変数の破棄
+		unset($_SESSION['join']);
+
+		// header('Location: ../top/top.html');
+		exit();
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -90,18 +177,18 @@ font-family: '[フォント名]', sans-serif;
 					<div id="jQueryBox">
 					    <div class="touroku">
 							<a name="touroku">
-								<form style="text-align:center">
+								<form style="text-align:center" action="" method="post" name="signup" enctype="multipart/form-data">
 									</br>
 									<dt>アカウント名</dt>
-									<dd><input type="text" name="account" class="span3"></dd>
+									<dd><input type="text" name="account" class="span3" required /></dd>
 
 									<dt>メールアドレス</dt>
-									<dd><input type="email" name="email" class="span3"></dd>
+									<dd><input type="email" name="email" class="span3" required /></dd>
 
 									<dt>パスワード</dt>
-									<dd><input type="password" name="password" class="span3"></dd>
+									<dd><input type="password" name="password" class="span3" required /></dd>
 
-									<a class="btn signup" input type="submit" value="Sign up">Sign up</a>
+									<a href="javascript:void(0)" onclick="document.signup.submit();";><div class="btn btn-signup" input type="submit" >Sign up</div></a>
 								</form>
 							</a>
 						</div>
