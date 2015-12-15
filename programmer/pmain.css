@@ -2,6 +2,7 @@ html,body,.main {
   height: 120%;
   display: block;
   margin: 0;
+  font-family: nicomoji;
 }
 
 a {
@@ -127,7 +128,7 @@ label {
 }
 
 .main img{
-  height: 100px;
+  height: 150px;
 }
 
 .signup{
