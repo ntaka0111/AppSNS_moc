@@ -4,14 +4,13 @@
 	<meta charset="utf-8">
 	<title>AppSNS TOP</title>
 	<link rel="stylesheet" type="text/css" href="top.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<script src="../../AppSNS/jquery-2.1.4.min.js"></script>
 	<body>
 		<div class="main">
 			
 			<!-- サイドバー -->
 			<div class="sidebar">
-				<img src="../../AppSNS/image/sushi.jpg" class="profile-icon">
+				<a href="../../AppSNS/profile/profile.html"><img src="../../AppSNS/image/sushi.jpg" class="profile-icon"></a>
 				<div class="profile">
 
 					<ul>
@@ -53,7 +52,7 @@
 							$(this).addClass("hover");
 						}, function(){
 							$(this).removeClass("hover");
-						});
+						})
 
 					.click(function(){
 						if( $(this).next("dd").css("display")=="none"){
@@ -63,7 +62,9 @@
 							$("> dt.active", acc).removeClass("active");
 
 							$(this).addClass("active").next("dd").slideDown("fast");
-					}
+						}
+						
+						})
 
 					});
 					</script>
@@ -125,6 +126,13 @@
 				<!-- 週間ランキング -->
 				<div class="adds">
 					<div class="main-contents">
+
+						<!-- <ol class="ranking-table">
+							<li date-target="#ranking-table" date-slide-to="0" class="active"></li>
+							<li date-target="#ranking-table" date-slide-to="1"></li>
+							<li date-target="#ranking-table" date-slide-to="2"></li>
+						</ol> -->
+						
 						<img src="../../AppSNS/image/AppSNS-logo.png">
 
 					</div>
@@ -168,9 +176,9 @@
 										</div>
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="2">
+						 --><li class="application" data-no="2">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/youtube.jpg">
 									<!-- アプリイメージ -->
@@ -198,9 +206,9 @@
 											
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="1">
+						 --><li class="application clear" data-no="3">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/グラブル.jpg">
 									<!-- アプリイメージ -->
@@ -226,9 +234,9 @@
 										</div>
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="2">
+						 --><li class="application" data-no="1">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/gunosy.png">
 									<!-- アプリイメージ -->
@@ -256,9 +264,9 @@
 											
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="1">
+						 --><li class="application" data-no="2">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/pinterest.jpg">
 									<!-- アプリイメージ -->
@@ -284,9 +292,9 @@
 										</div>
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="2">
+						 --><li class="application clear" data-no="3">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/モンスト.png">
 									<!-- アプリイメージ -->
@@ -314,9 +322,9 @@
 											
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="2">
+						 --><li class="application" data-no="1">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/mercari.png">
 									<!-- アプリイメージ -->
@@ -344,9 +352,9 @@
 											
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="1">
+						 --><li class="application" data-no="2">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/パズドラ.png">
 									<!-- アプリイメージ -->
@@ -372,9 +380,9 @@
 										</div>
 									</div>
 								</div>
-							</li>
+							</li><!-- 
 
-							<li class="application" data-no="2">
+						 --><li class="application clear" data-no="3">
 								<div class="appli-image">
 									<img src="../../AppSNS/image/jumper.jpg">
 									<!-- アプリイメージ -->

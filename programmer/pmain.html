@@ -4,12 +4,7 @@
 	<meta charset="utf-8">
 	<title>AppSNS エンジニア向けページ</title>
 	<link rel="stylesheet" type="text/css" href="pmain.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
-    <!-- <link rel="stylesheet" href="assets/css/form.css"> -->
-    <!-- <link rel="stylesheet" href="assets/css/timeline.css">
-    <link rel="stylesheet" href="assets/css/main.css"> -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 	<body>
 		<header>
@@ -50,20 +45,36 @@
 					<p><br />AppSNSは無料のアプリケーション共有SNSです。<br /><br />作り上げたものを公開し、エンジニア同士互いにフィードバックを行い、より技術を高めませんか？</p><br /><br />
 					</div>
 
+
 					<!-- JavaScript -->
-					<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 					<script type="text/javascript">
 					$(function(){
 						// 「id="jQueryBox"」を非表示
 						$("#jQueryBox").css("display", "none");
-
+					
 						// 「id="jQueryPush"」がクリックされた場合
 						$("#jQueryPush").click(function(){
-							// 「id="jQueryBox"」の表示、非表示を切り替える
-							$("#jQueryBox").toggle();
+						// 「id="jQueryBox"」の表示、非表示を切り替える
+							$("#jQueryBox").fadeIn(600);
 						});
 					});
 					</script>
+					
+
+					
+					<script type="text/javascript">
+					$(function(){
+						$('a[href^=#]').click(function(){
+							var speed = 400;
+							var href= $(this).attr("href");
+							var target = $(href == "#" || href == "" ? 'html' : href);
+							var position = target.offset().top;
+							$("html, body").animate({scrollTop:position}, speed, "swing");
+							return false;
+						});
+					});
+					</script>
+
 
 					<a href="#touroku"><div id="jQueryPush" class="btn btn-signup" input type="button" value="表示" onclick="hyoji2(0)">無料で始める</div></a>
 					<div id="jQueryBox">
