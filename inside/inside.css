@@ -1,0 +1,576 @@
+html,body,.main {
+	height: 100%;
+	display: block;
+	margin: 0;
+	background-color: #f5f5f5;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+
+
+/* ヘッダー */
+
+header{
+	position: fixed;
+	height: 60px;
+	width: 100%;
+	box-shadow: 0 0 2px #666,0 0 8px #222;
+}
+
+.header-design {
+	height: 50px;
+	padding: 5px 0;
+	background-color: #000080;
+}
+
+.header-design img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40px;
+	margin-top: 5px;
+}
+
+
+/* 検索 */
+
+
+/* 中身 */
+
+.main {
+	width: 100%;
+}
+
+
+/* サイドバー */
+
+.sidebar {
+	position: fixed;
+	height:100%;
+	width: 230px;
+	margin-top: 60px;
+	float: left;
+	padding: 0;
+	background-color: white;
+	box-shadow: 0 2px 0 #666,0 0 8px #222;
+}
+
+.sidebar .profile-icon {
+	height: 70px;
+	width: 70px;
+	margin: 20px 0 0 85px;
+}
+
+.sidebar li p{
+	font-size: 12px;
+	color: gray;
+}
+
+.sidebar img {
+	border-radius: 50%;
+	height: 70px;
+	width: 70px;
+}
+
+.sidebar .profile ul {
+	margin: 0 10px;
+	width: 190px;
+	height: 54px;
+	list-style: none;
+	padding: 10px;
+	display: inline-block;
+}
+
+.sidebar .profile li {
+	height: 32px;
+	text-align: center;
+}
+
+.sidebar .profile h4 {
+	margin: 0;
+}
+
+
+/* フォロー・フォロワー */
+
+.follow {
+	margin: 0 10px 0 10px;
+	padding-top: 5px;
+	border-top: solid 1px #EAEAEA;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.f-f {
+	display: inline-block;
+	width: 210px;
+}
+
+.f-f .following:hover {
+	opacity: 0.7;
+}
+
+.f-f .follower:hover {
+	opacity: 0.7;
+}
+
+.f-f h4 {
+	margin: 0;
+	color: #000080;
+}
+
+.f-f p {
+	font-size: 12px;
+	color: #000080;
+}
+
+.following {
+	text-align: center;
+	width: 104px;
+	border-right: solid 1px #EAEAEA;
+	display: inline-block;
+	float: left;
+}
+
+.follower {
+	text-align: center;
+	width: 105px;
+	display: inline-block;
+	float: left;
+}
+
+
+/* カテゴリ */
+.category {
+	margin: 0 10px 0 20px;
+	padding-top: 5px;	
+}
+
+.category h4 {
+	margin: 10px 0;
+}
+
+.category-top {
+	margin: 10px 10px 0 10px;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.category-top p {
+	padding: 8px 0;
+}
+
+.game {
+	margin-left: 0;
+	border-top: solid 1px #EAEAEA;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.map {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.everyday {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+.study {
+	margin-left: 0;
+	border-bottom: solid 1px #EAEAEA;
+}
+
+
+
+/* メインコンテンツ */
+
+.adds {
+	height: 275px;
+	width: 100%;
+}
+
+.main-contents {
+	height: 100%;
+	width: 70%;
+	float: left;
+	background-image: url("../../AppSNS/image/blue-back.png");
+	background-size: cover;
+}
+
+.main-contents img {
+	height: 80%;
+	margin: 40px 30%;
+}
+
+.sub-contents1 {
+	height: 50%;
+	width: 30%;
+	background-color: white;
+	float: left;
+}
+
+.sub-contents2 {
+	height: 50%;
+	width: 30%;
+	background-color: blue;
+	float: left;
+}
+
+.sub-contents1 img {
+	height: 139px;
+	width: 100%;
+}
+
+.sub-contents2 img {
+	height: 139px;
+	width: 100%;
+}
+
+
+/* コンテンツ */
+
+.appli-article {
+	height: 1000px;
+	width: 90%;
+	margin: 0 5% 0 5%;
+}
+
+.contents {
+	height: 600px;
+	width: 100%-230px;
+	float: left;
+	margin-top: 60px;
+	padding: 0 0 5% 230px;
+}
+
+.contents h3 {
+	margin: 20px 30px 20px 30px;
+}
+
+.contents ul {
+	list-style: none;
+	padding: 0;
+}
+
+.contents li.application {
+	vertical-align: top;
+	height: 100%;
+	width: 31%;
+	margin-right: 3.5%;
+	margin-bottom: 3.5%;
+	background-color: white;
+}
+
+.contents li.application.clear {
+	margin-right: 0;
+}
+
+
+/* 記事 */
+
+li .appli-image {
+	height: 35%;
+
+}
+
+li .appli-image img {
+	height: 150px;
+	width: 100%;
+}
+
+li .under {
+	height: 65%+70px;
+}
+
+li .under p {
+	font-size: 13px;
+}
+
+li .under .comment img {
+	border-radius: 50%;
+	float: left;
+	height: 38px;
+	width: 38px;
+}
+
+h3 {
+	margin: 0 0 10px 0;
+}
+
+.comment ul {
+	float: left;
+	height: 38px;
+	margin-bottom: 8px;
+}
+
+.comment li {
+	margin-left: 10px;
+}
+
+.app-tc {
+	height: 190px;
+	margin: 5px 25px 10px 25px;
+}
+
+.app-tc h3 {
+	margin: 10px 0;
+}
+
+.reason {
+	width: 100%;
+	height: 102px;
+	padding-top: 3px;
+	border-top: 2px solid #ddd;
+	clear: left;
+}
+
+.creater-icon {
+	margin-top: -35px;
+	text-align: center;
+}
+
+.creater-icon img {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+}
+
+.contents .application {
+	display: inline-block;
+	width: 10%;
+}
+
+.border {
+	border: 2px;
+	border-color: black;
+}
+
+/*
+
+=================================
+サイドバーだけ残して右側の作成
+=================================*/
+.kiji{
+	height: 100%;
+    width: 1198px;
+    background-color: #f5f5f5;
+    float: right;
+    margin-top: 100px;
+}
+
+.kiji h1 {
+  margin: 10px 0;
+  padding: 0;
+  font-size: 32px;
+  text-align: left;
+  background-color: #fff;
+  color: #0561A9;
+
+}
+.kiji h2 {
+  margin: 0 -20px 10px -20px;
+  padding: 5px 10px;
+  background-color: #f8f8ff;
+  color: #0561A9;
+  font-size: 18px;
+  border-left:solid 3px #00bfff;
+}
+.kiji h3 {
+  margin: 0 -15px 10px -15px;
+  padding: 5px 10px;
+  background-color: #f8f8ff;
+  color: #000;
+  font-size: 14px;
+    border-left:solid 3px #00bfff;
+}
+.post {
+  width: 900px; 
+  margin-right:auto; 
+  margin-left:auto;
+  padding: 0 20px 20px 20px; 
+  background-color: #fff; 
+}
+.comment {
+  margin: 10px 0;
+  padding: 0 15px 15px 15px; 
+  background-color: #fff; 
+}
+.commment_link {
+  text-align: right;
+}
+/*
+=======================
+Jquery画像
+=======================*/
+/* Gallery styles */
+
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+	/* Page reset */
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	/* Setting default text color, background and a font stack */
+	color:#444444;
+	font-size:13px;
+	background: #f2f2f2;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#gallery{
+	/* CSS3 Box Shadow */
+	-moz-box-shadow:0 0 3px #AAAAAA;
+	-webkit-box-shadow:0 0 3px #AAAAAA;
+	box-shadow:0 0 3px #AAAAAA;
+
+
+	/* CSS3 Rounded Corners */
+
+	-moz-border-radius-bottomleft:4px;
+	-webkit-border-bottom-left-radius:4px;
+	border-bottom-left-radius:4px;
+
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;
+	border-bottom-right-radius:4px;
+
+	border:1px solid white;
+
+	background:url(img/panel.jpg) repeat-x bottom center #ffffff;
+
+	/* The width of the gallery */
+	width:600px;
+	overflow:hidden;
+}
+
+#slides{
+	/* This is the slide area */
+	height:350px;
+
+	/* jQuery changes the width later on to the sum of the widths of all the slides. */
+	width:500px;
+	overflow:hidden;
+
+}
+
+.slide{
+	float:left;
+	margin-right: auto;
+	margin-left: auto;
+	
+
+}
+
+.slide img{
+	height:100%;
+	width:100%;
+}
+
+#menu{
+	/* This is the container for the thumbnails */
+	height:80px;
+	text-align: center;
+	
+
+}
+
+ul{
+	margin:0px;
+	padding:0px;
+	background-color: #fff;
+	border:1px solid #f5f5f5;
+}
+
+li{
+	/* Every thumbnail is a li element */
+	width:60px;
+	display:inline-block;
+	list-style:none;
+	height:60px;
+	overflow:hidden;
+	margin-left: 5px;
+}
+
+li.inact:hover{
+	/* The inactive state, highlighted on mouse over */
+	background:url(img/pic_bg.png) repeat;
+}
+
+li.act,li.act:hover{
+	/* The active state of the thumb */
+	background:url(img/active_bg.png) no-repeat;
+}
+
+li.act a{
+	cursor:default;
+}
+
+.fbar{
+	/* The left-most vertical bar, next to the first thumbnail */
+	width:2px;
+	background:url(img/divider.png) no-repeat right;
+}
+
+li a{
+	display:block;
+	background:url(img/divider.png) no-repeat right;
+	height:35px;
+	padding-top:10px;
+}
+
+a img{
+	border:none;
+}
+
+
+.post-top{
+	width:920px;
+	height:220px;
+	background-color: #fff;
+	border-bottom: #000 solid 0.5px;
+	padding-bottom: 30px;
+
+}
+
+.post-top img{
+	float:left;
+ 	height:170px;
+ 	width:170px;
+ 	margin: 30px;
+ 	border-radius: 20px;
+}	
+
+.top-content{
+	padding: 10px;
+	margin: 30px;
+	width:500px;
+	height:170px;
+	float:left;
+	background-color: #f8f8ff;
+}
+
+.top-content h2{
+	color:#000;
+	border:none;
+	margin: 0px;
+
+
+}
+
+.top-content p{
+	color:#808080;
+	margin-top: 20px;
+
+}
+/*
+.mains{
+	 width:500px;
+	 height:300px;
+}
+*/

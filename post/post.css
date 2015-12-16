@@ -47,6 +47,17 @@ hr {
 
    =========================*/
 
+   
+/*テキストエリアの青い枠線を消す*/
+textarea{
+outline: none;
+}
+
+input{
+  outline: none;
+}
+
+
 
 
 #header{
