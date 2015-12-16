@@ -29,9 +29,19 @@ if($_POST['message']!=''){
 
 <!DOCTYPE html>
 <html>
+<style>
+@font-face {
+font-family: 'nicomoji';
+src:url('../../AppSNS/nicomoji-plus_1.11.ttf') format('truetype');
+}
+
+body {
+font-family: '[フォント名]', sans-serif;
+}
+</style>
 <head>
     <meta charset="utf-8">
-    <title>AppSNS エンジニア向けページ</title>
+    <title>AppSNS 記事投稿ページ</title>
     <link rel="stylesheet" type="text/css" href="post.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -39,39 +49,15 @@ if($_POST['message']!=''){
     <!-- <link rel="stylesheet" href="assets/css/timeline.css"> -->
 </head>
     <body>
-        <header>
-            <div class="container">
-                <div class="header-design">
-                    <div class="login-form">
-                        <img src="../image/AppSNS-logo.png">
-                        <form>
-                            <ul style="list-style:none;">
-                                <li>
-                                    <input type="text" id="email" placeholder="メールアドレス">
-                                </li>
-                                <li>
-                                    <input type="text" id="email" placeholder="パスワード">
-                                </li>
-                            </ul>
-                            <ul style="list-style:none;">
-                                <li>
-                                    <label class="remember">
-                                        <input type="checkbox" value="1" name="remember_me" checked="checked">
-                                        <span>ログインしたままにする</span>
-                                    </label>
-                                    <div class="btn-login">
-                                        <a href="#" class="btn login">ログイン</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </header>
+      <!-- ヘッダー -->
+      <header>
+        <div class="header-design">
+          <img src="../../AppSNS/image/logo2_white.png">
+        </div>
+      </header><!-- header -->
 
 <div class="zentai">
-
+  <div class="ddd">
     <form accept-charset="UTF-8" action="/lists/187234" class="edit_list" id="edit_list_187234" method="post" novalidate="novalidate" style="height:245px;"><div style="margin:0;padding:0;display:inline"><input type="hidden"><input name="_method" type="hidden" value="put"><input name="authenticity_token" type="hidden" value="jODrO4S+1+jVoV8dizU8pPml39gfdUQ20NBs516lIXE="></div>
 
 
@@ -115,11 +101,10 @@ if($_POST['message']!=''){
                     <textarea id="toko-text-contents" name="list[description]" placeholder="まとめの説明（160文字以内）"><?php echo h($content);?></textarea>
                     <p class="toko-text-p"><span class="count">0</span>/160文字</p>
                 </div>
+
             </div><!-- toko-main -->
         
-</form>
-        
-
+          </form>
         <div class="file-main">
 
             <form method="post" action="">
@@ -133,6 +118,7 @@ if($_POST['message']!=''){
             </form>
         </div>
 
+        </div><!-- ddd -->
 
 
         <div class="edit-main">
