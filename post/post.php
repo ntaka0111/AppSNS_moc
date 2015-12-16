@@ -19,7 +19,7 @@ if($_POST['message']!=''){
   }
 }
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.ttitle,article.content FROM article ORDER BY `created` DESC');
+  $sql=sprintf('SELECT article.title,article.content FROM article ORDER BY `created` DESC');
   $posts=mysqli_query($db,$sql)or die (mysqli_error($db));
 //自作関数　htmlspecialcharsのショートカット
   function h($value){
