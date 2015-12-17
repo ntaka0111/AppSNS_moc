@@ -3,14 +3,32 @@
 require('../dbconnect.php');
 
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.title,article.content FROM article ORDER BY `created` DESC');
-  $posts=mysqli_query($db,$sql)or die (mysqli_error($db));
+  $sql=sprintf('SELECT article.title,article.content FROM article');
+  mysqli_query($db,$sql)or die (mysqli_error($db));
+
+
 //自作関数　htmlspecialcharsのショートカット
   function h($value){
   return htmlspecialchars($value,ENT_QUOTES,'UTF-8');
   }
 
+
+
+	$title='';
+  	if(isset($_POST['title'])){
+		$title=$_POST['title'];
+	}
+
+	$content='';
+  	if(isset($_POST['content'])){
+		$content=$_POST['content'];
+	}
+
   ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -134,47 +152,37 @@ require('../dbconnect.php');
 						<div class="post-top">
 								<img src="../image/IMG_6910.jpg">
 								<div class="top-content">
-								<h2>アプリのなまえ</h2>
-								<p>アプリアプリアプリアプリアプリアプリアプリアプリアプリ
-									アプリアプリアプリアプリアプリアプリアプリアプリアプリ
-								アプリアプリアプリアプリアプリアプリアプリアプリアプリ
-							アプリアプリアプリアプリアプリアプリアプリアプリアプリアプリアプリアプリ</p></div>
+								<h2><?php echo h($title);?></h2>
+								<p><?php echo h($content);?></p></div>
+
 						</div>
 <!-- ここから -->
-						  <div id="main">
+						  	<div id="main">
 
-							<div id="gallery">
+								<div id="gallery">
+									<div id="slides">
+										<div class="slide"><img src="../image/IMG_6910.jpg" /></div>
+										<div class="slide"><img src="../image/IMG_6914.jpg" /></div>
+										<div class="slide"><img src="../image/IMG_6915-1.jpg" /></div>
+										<div class="slide"><img src="../image/IMG_6915-2-1.jpg" /></div>
+										<div class="slide"><img src="../image/IMG_6917-1.jpg" /></div>
+										<div class="slide"><img src="../image/IMG_6928-1.jpg" /></div>
+									</div><!-- slides -->
 
-							<div id="slides">
+									<div id="menu" style="padding-bottom: 40px;">
+										<ul>
+										<li class="fbar">&nbsp;</li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6910.jpg" /></a></li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6914.jpg" /></a></li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6915-1.jpg" /></a></li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6915-2-1.jpg" /></a></li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6917-1.jpg" /></a></li>
+										<li class="menuItem"><a href=""><img src="../image/IMG_6928-1.jpg" /></a></li>
+										</ul>
+									</div>"<!-- menu -->
+								</div><!-- gallery -->
 
-							<div class="slide"><img src="../image/IMG_6910.jpg" /></div>
-							<div class="slide"><img src="../image/IMG_6914.jpg" /></div>
-							<div class="slide"><img src="../image/IMG_6915-1.jpg" /></div>
-							<div class="slide"><img src="../image/IMG_6915-2-1.jpg" /></div>
-							<div class="slide"><img src="../image/IMG_6917-1.jpg" /></div>
-							<div class="slide"><img src="../image/IMG_6928-1.jpg" /></div>
-							
-
-							</div>
-
-							<div id="menu" style="padding-bottom: 40px;">
-
-							<ul>
-							<li class="fbar">&nbsp;</li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6910.jpg" /></a></li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6914.jpg" /></a></li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6915-1.jpg" /></a></li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6915-2-1.jpg" /></a></li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6917-1.jpg" /></a></li>
-							<li class="menuItem"><a href=""><img src="../image/IMG_6928-1.jpg" /></a></li>
-
-							</ul>
-
-							</div>
-
-							</div>
-
-							</div>
+							</div><!-- main -->
 
 <!-- 							ここまで -->
 

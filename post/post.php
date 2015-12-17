@@ -3,145 +3,156 @@
 
 require('../dbconnect.php');
 
+
+
+   // if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+
 //  //投稿を記録する.※POST送信されたものがあるかどうか
-if(!empty($_POST)){
+    if(!empty($_POST)){
 //  メッセージが入力されていた時
- if($_POST['title']||['content']!=''){
-//  //%d...整数型のデータを置換する文字
-//  //%s...文字型のデータを置換する文字
-//  //SQL文では数字をダブルクォーテーションで
-    $sql=sprintf('INSERT INTO article SET title="%s",content="%s",created=NOW()',
+       if($_POST['title']!='' && $_POST['content']!=''){
+       $sql=sprintf('INSERT INTO article SET title="%s",content="%s"',
         mysqli_real_escape_string($db,$_POST['title']),
         mysqli_real_escape_string($db,$_POST['content'])
         );
         mysqli_query($db,$sql)or die (mysqli_error($db));
         
-        header('Location:index.php');
+        header('Location:post.php');
         exit();
+        }
     }
-}
+
 
 ?>
-
+  
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>AppSNS エンジニア向けページ</title>
+    <title>AppSNS TOP</title>
     <link rel="stylesheet" type="text/css" href="post.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <!-- <link rel="stylesheet" href="assets/css/form.css"> -->
-    <!-- <link rel="stylesheet" href="assets/css/timeline.css"> -->
-</head>
+        <script src="../jquery-2.1.4.min.js"></script>
     <body>
-        <header>
-            <div class="container">
+        <div class="main">
+            
+
+
+            <!-- ヘッダー -->
+            <header>
                 <div class="header-design">
-                    <div class="login-form">
-                        <img src="../image/AppSNS-logo.png">
-                        <form>
-                            <ul style="list-style:none;">
-                                <li>
-                                    <input type="text" id="email" placeholder="メールアドレス">
-                                </li>
-                                <li>
-                                    <input type="text" id="email" placeholder="パスワード">
-                                </li>
-                            </ul>
-                            <ul style="list-style:none;">
-                                <li>
-                                    <label class="remember">
-                                        <input type="checkbox" value="1" name="remember_me" checked="checked">
-                                        <span>ログインしたままにする</span>
-                                    </label>
-                                    <div class="btn-login">
-                                        <a href="#" class="btn login">ログイン</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </form>
-                    </div>
+                    <img src="../../AppSNS/image/logo2_white.png">
                 </div>
-            </div>
-        </header>
+            </header><!-- header -->
 
-<div class="zentai">
+            <div class=""></div>
 
-    <form accept-charset="UTF-8" action="inside.php" method="post">
-        <input name="_method" type="hidden" value="put">
 
-         <div class="toko-menu">
-            <div class="toko-menu-in">
-                <select class="toko-menu-categories" style="width:198px;height:36px;">
-                  <!-- 
-                    <span class="ui-selectmenu-button ui-widget ui-state-default ui-corner-all" tabindex="0" id="list_big_category_id-button" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-owns="list_big_category_id-menu" aria-haspopup="true" style="width: 200px;">
-                    <span class="ui-icon ui-icon-triangle-1-s"></span>
-                     -->
-                <!-- </span> -->
-
-                    <option value="">カテゴリを選択</option>
-
-                    <option value="1">ファッション</option>
-                    <option value="2">メイク・コスメ</option>
-                    <option value="3">美容</option>
-                    <option value="4">ヘアスタイル</option>
-                    <option value="5">恋愛</option>
-                    <option value="6">ライフスタイル</option>
-                    <option value="7">グルメ</option>
-                    <option value="8">旅行・おでかけ</option>
-                    <option value="9">ネイル</option>
-                </select>
-
+             <div class="post">
+                <form method="post" action="../inside/inside.php">
                 <div class="toko-menu-edit">
-                <input class="edit-btn" data-disable-with="保存中..." name="commit" type="submit" value="投稿する" style="background-color:#ff7f50;color:#fff;">
-               <!--  <input class="edit-btn" data-disable-with="保存中..." name="commit" type="submit" value="下書き保存">
-                <input class="edit-btn" data-disable-with="保存中..." name="commit" type="submit" value="プレビュー">
-                <input class="edit-btn" data-disable-with="保存中..." name="commit" type="submit" value="記事作成"> -->
-                </div>
-            </div><!-- toko-menu-in -->
-        </div><!-- toko-menu -->
+                   <p>
+                    <input class="edit-btn" name="submit" type="submit" value="投稿する">
+                    </p>
+                </div>                               
+                                
+            </div><!-- post -->
 
-            <div class="toko-main">
-                <div class="toko-image"><img alt="タイトルを入力してください" height="160" src="https://assets.mery.jp/1449638204321/images/noimage.png" width="160" data-pin-nopin="true">
-                </div>
-
-                 <div class="toko-text">
-                    <input id="toko-text-title" name="title" placeholder="アプリの名前"  type="text" value="<?php echo $post['title']?>">
-
-                    <textarea id="toko-text-contents" name="content" placeholder="アプリの説明（160文字以内）"><?php echo $post['content']?></textarea>
-                    <p class="toko-text-p"><span class="count">0</span>/160文字</p>
-                </div>
-            </div><!-- toko-main -->
-        
-</form>
-        <!-- 
-
-        <div class="file-main">
-
-            <form method="post" action="">
-               <div class="file-button">
-                <input id="file-button-input" type="file" value="ファイルを選択">
-                </div>
+            <div class="kiji">
                 
-                <div class="file-settei">
-                <input id="file-settei-input" data-confirm="著作権や第三者の権利を侵害する画像をアップロードした場合、利用規約および関連法規により処罰を受ける可能性があります。" data-disable-with="設定中..." name="commit" type="submit" value="設定">
-                </div>
-            </form>
-        </div> -->
+                  
+
+                    <div class="post-top">
+                        
+                        <img alt="アプリのアイコンを選択してください" src="" style="background-color:#fff;">
+                            <div class="top-content">
+                                <div class="post-title">
+                                <p><input type="text" name="title" size="40" placeholder="まとめのタイトル"></p>
+                                </div>
+                                <div class="post-content">
+                                <p><textarea name="content" rows="8" cols="40" placeholder="まとめの説明（160文字以内）"></textarea></p>
+                                </div>
+                                 
+                            </div>
+                        </form>
+                    </div><!-- post-top -->
+
+                    <!-- ここから -->
+                          <div id="main">
+                                <div id="gallery">
+                                    <div id="slides">
+                                        <div class="slide"><img src="../image/IMG_6910.jpg" /></div>
+                                        <div class="slide"><img src="../image/IMG_6914.jpg" /></div>
+                                        <div class="slide"><img src="../image/IMG_6915-1.jpg" /></div>
+                                        <div class="slide"><img src="../image/IMG_6915-2-1.jpg" /></div>
+                                        <div class="slide"><img src="../image/IMG_6917-1.jpg" /></div>
+                                        <div class="slide"><img src="../image/IMG_6928-1.jpg" /></div>
+                                    </div><!-- slides -->
+
+                                    <div id="menu" style="padding-bottom: 40px;">
+                                        <ul>
+                                        <li class="fbar">&nbsp;</li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6910.jpg" /></a></li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6914.jpg" /></a></li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6915-1.jpg" /></a></li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6915-2-1.jpg" /></a></li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6917-1.jpg" /></a></li>
+                                        <li class="menuItem"><a href=""><img src="../image/IMG_6928-1.jpg" /></a></li>
+                                        </ul>
+                                    </div>"<!-- menu -->
+                                </div><!-- gallery -->
+                                <ul class="side-info">
+                                    情報
+                                    <li>カテゴリ：</li>
+                                    <li>掲載日：</li>
+                                    <li>価格：</li>
+                                    <li>販売元：</li>
+                                    <li>言語:</li>
+                                </ul>
+                            </div><!-- main -->
+
+                            <div class="content-main">
+                                  <div class="content-main-in">
+                                <h2><input type="text" name="" size="50" placeholder="投稿日時"></h2>
+                                <h1><input type="text" name="" size="50" placeholder="記事タイトル"></h1>
+                              <p><textarea name="" rows="10" cols="100" placeholder="リード文"></textarea></p><br>
+                                <br>
+
+                                <img src="">アプリの画像<br>
+
+                                <h2>何ができるのか</h2><br>
+                                <p></p><br>
 
 
-</div><!-- zentai -->
+                                <h2>なぜ作ったのか</h2><br>
+                                <p></p><br>
 
-    
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jribbble.js"></script>
-    <script src="assets/js/site-ck.js"></script>
+                                <h2>どのようにしていきたいのか</h2><br>
+                                <p></p><br>
 
 
-        </body>
+                                <img src="../image/IMG_6910.jpg"><br>
+                                <p>
+                                    『ペコッター』ではメールアドレスやSNSの連携などを必要とせず<br>
+                                    ・ニックネーム<br>
+                                    ・年齢<br>
+                                    ・利用する地域<br>
+                                    ・の項目を入力するだけで今スグ利用できるんです。<br>
+                                <p>
+                                    </div><!-- content-main-in -->
+                            </div><!-- content-main -->
+
+
+            </div><!-- kiji -->
+
+        </div><!-- main -->
+    </body>
 </html>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/form.js"></script>
+
+
