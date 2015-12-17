@@ -20,7 +20,7 @@ font-family: '[フォント名]', sans-serif;
 		<header>
 			<div class="container">
 				<div class="header-design">
-					<a href="../../AppSNS/top/top.html"><img src="../image/AppSNS-logo.png"></a>
+					<a href="../../AppSNS/top/top.php"><img src="../image/AppSNS-logo.png"></a>
 					<form>
 						<ul style="list-style:none;">
 							<li>

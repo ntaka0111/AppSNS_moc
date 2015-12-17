@@ -20,7 +20,7 @@ font-family: '[フォント名]', sans-serif;
 			
 			<!-- サイドバー -->
 			<div class="sidebar">
-				<a href="../../AppSNS/profile/profile.html"><img src="../../AppSNS/image/sushi.jpg" class="profile-icon"></a>
+				<a href="../../AppSNS/profile/profile.php"><img src="../../AppSNS/image/sushi.jpg" class="profile-icon"></a>
 				<div class="profile">
 
 					<ul>
@@ -146,8 +146,6 @@ font-family: '[フォント名]', sans-serif;
 							<li date-target="#ranking-table" date-slide-to="2"></li>
 						</ol> -->
 						
-						<img src="../../AppSNS/image/AppSNS-logo.png">
-
 					</div>
 
 					<div class="sub-contents1">

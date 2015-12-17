@@ -32,13 +32,15 @@ header{
 
 .header-design img{
 	float: left;
-	text-align: center;
-	display: block;
+	vertical-align: middle;
 	height: 40px;
-	margin: 5px auto;
+	margin-top: 5px;
+	margin-left: 45.5%;
 }
 
 .header-design a {
+	width: 65px;
+	padding-top: 18px;
 	float: right;
 	color: white;
 }
@@ -196,8 +198,8 @@ header{
 /* メインコンテンツ */
 
 .adds {
+	width: 100%-230px;
 	height: 275px;
-	width: 100%;
 }
 
 .main-contents {
@@ -267,6 +269,7 @@ header{
 	vertical-align: top;
 	height: 100%;
 	width: 31%;
+	min-width: 250px;
 	margin-right: 3.5%;
 	margin-bottom: 3.5%;
 	background-color: white;
