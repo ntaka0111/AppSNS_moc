@@ -98,15 +98,15 @@ require('../dbconnect.php');
                                         <li class="menuItem"><a href=""><img src="../image/IMG_6917-1.jpg" /></a></li>
                                         <li class="menuItem"><a href=""><img src="../image/IMG_6928-1.jpg" /></a></li>
                                         </ul>
-                                    </div>"<!-- menu -->
+                                    </div><!-- menu -->
                                 </div><!-- gallery -->
                                 <ul class="side-info">
-                                    情報
-                                    <li>カテゴリ：</li>
-                                    <li>掲載日：</li>
-                                    <li>価格：</li>
-                                    <li>販売元：</li>
-                                    <li>言語:</li>
+                                    
+                                    <li><input type="text" name=""  placeholder="カテゴリ"></li>
+                                    <li><input type="text" name="" placeholder="掲載日"></li>
+                                    <li><input type="text" name=""  placeholder="価格"></li>
+                                    <li><input type="text" name="" placeholder="販売元"></li>
+                                    <li><input type="text" name=""  placeholder="言語"></li>
                                 </ul>
                             </div><!-- main -->
 

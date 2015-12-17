@@ -392,4 +392,12 @@ jQueryのスライド画像
 
 }
 
+.side-info li{
+  display:inline-block;
+  width:220px;
+  height:30px;
+  padding: 3px;
+
+}
+
 
