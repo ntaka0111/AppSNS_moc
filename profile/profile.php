@@ -39,7 +39,7 @@
 			<!-- ヘッダー -->
 			<header>
 				<div class="header-design">
-					<a href="../../AppSNS/top/top.html"><img src="../../AppSNS/image/logo2_white.png"></a>
+					<a href="../../AppSNS/top/top.php"><img src="../../AppSNS/image/logo2_white.png"></a>
 				</div>
 			</header><!-- header -->
 
