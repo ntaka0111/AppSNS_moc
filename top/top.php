@@ -64,17 +64,17 @@ font-family: '[フォント名]', sans-serif;
 							$(this).removeClass("hover");
 						})
 
-					.click(function(){
-						if( $(this).next("dd").css("display")=="none"){
+					// .click(function(){
+					// 	if( $(this).next("dd").css("display")=="none"){
 
-							$("> dd", acc).slideuo("fast");
+					// 		$("> dd", acc).slideuo("fast");
 
-							$("> dt.active", acc).removeClass("active");
+					// 		$("> dt.active", acc).removeClass("active");
 
-							$(this).addClass("active").next("dd").slideDown("fast");
-						}
+					// 		$(this).addClass("active").next("dd").slideDown("fast");
+					// 	}
 						
-						})
+					// 	})
 
 					});
 					</script>
