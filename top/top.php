@@ -125,8 +125,11 @@ font-family: '[フォント名]', sans-serif;
 
 			<!-- ヘッダー -->
 			<header>
-				<div class="header-design">
-					<img src="../../AppSNS/image/logo2_white.png">
+				<div class="header-all">
+					<div class="header-design">
+						<img src="../../AppSNS/image/logo2_white.png">
+						<a href="logout.php">ログアウト</a>
+					</div>
 				</div>
 			</header><!-- header -->
 
