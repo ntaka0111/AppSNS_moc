@@ -3,7 +3,7 @@
 require('../dbconnect.php');
 
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.title,article.content FROM article');
+  $sql=sprintf('SELECT article.title,article.content,article.one_article FROM article');
   mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
@@ -11,8 +11,6 @@ require('../dbconnect.php');
   function h($value){
   return htmlspecialchars($value,ENT_QUOTES,'UTF-8');
   }
-
-
 
 	$title='';
   	if(isset($_POST['title'])){
@@ -24,9 +22,11 @@ require('../dbconnect.php');
 		$content=$_POST['content'];
 	}
 
+    $one_article='';
+  	if(isset($_POST['one_article'])){
+		$one_article=$_POST['one_article'];
+	}
   ?>
-
-
 
 
 <!DOCTYPE html>
@@ -146,7 +146,7 @@ require('../dbconnect.php');
 			</div><!-- sidebar -->
 
 			<div class="kiji">
-				<div class="">
+				
 					<div class="post">
 
 						<div class="post-top">
@@ -156,56 +156,13 @@ require('../dbconnect.php');
 								<p><?php echo h($content);?></p></div>
 
 						</div>
-<!-- ここから -->
-						  	<div id="main">
 
-								<div id="gallery">
-									<div id="slides">
-										<div class="slide"><img src="../image/IMG_6910.jpg" /></div>
-										<div class="slide"><img src="../image/IMG_6914.jpg" /></div>
-										<div class="slide"><img src="../image/IMG_6915-1.jpg" /></div>
-										<div class="slide"><img src="../image/IMG_6915-2-1.jpg" /></div>
-										<div class="slide"><img src="../image/IMG_6917-1.jpg" /></div>
-										<div class="slide"><img src="../image/IMG_6928-1.jpg" /></div>
-									</div><!-- slides -->
+						<article class="posted">
 
-									<div id="menu" style="padding-bottom: 40px;">
-										<ul>
-										<li class="fbar">&nbsp;</li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6910.jpg" /></a></li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6914.jpg" /></a></li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6915-1.jpg" /></a></li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6915-2-1.jpg" /></a></li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6917-1.jpg" /></a></li>
-										<li class="menuItem"><a href=""><img src="../image/IMG_6928-1.jpg" /></a></li>
-										</ul>
-									</div>"<!-- menu -->
-								</div><!-- gallery -->
+							<?php echo h($one_article);?>
 
-							</div><!-- main -->
+						</article>
 
-<!-- 							ここまで -->
-
-						  <h1>『ペコッター』登録不要で使える！3分でオススメの飲食店をクチコミで教えてくれるアプリが登場</h1>
-						  <p>
-						    こんにちは、SHANです。
-							そろそろ忘年会のシーズンということで、会場となるお店探しに手間取っている方もいらっしゃるのではないでしょうか。
-							そこで今回は、チャット上でいくつかの質問をするだけで自分に合ったお店をカンタンに探せてしまうアプリ『ペコッター』をご紹介します。
-							メールアドレスの登録や会員登録などの面倒な手順を踏まずに今すぐ利用することができちゃいますよ〜！</p><br>
-						    <br>
-
-						    <h3>チャット上でいくつか質問をするだけ！</h3><br>
-						    <img src="../image/IMG_6910.jpg"><br>
-						    <p>
-						    	『ペコッター』ではメールアドレスやSNSの連携などを必要とせず<br>
-								・ニックネーム<br>
-								・年齢<br>
-								・利用する地域<br>
-								・の項目を入力するだけで今スグ利用できるんです。<br>
-						    <p>
-
-
-						  
 
 						  <div class="comment">
 						    <h3>Aさん</h3>
@@ -225,7 +182,7 @@ require('../dbconnect.php');
 						    <a href="#">コメント</a>
 						  </p>
 					</div>
-				</div>
+				
 			</div><!-- kiji -->
 
 
