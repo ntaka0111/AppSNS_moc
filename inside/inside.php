@@ -3,8 +3,9 @@
 require('../dbconnect.php');
 
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.title,article.content,article.one_article FROM article');
-  mysqli_query($db,$sql)or die (mysqli_error($db));
+  $sql=sprintf('SELECT article.title,article.content,article.one_article,article.icon FROM article');
+  
+  $articles=mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
 //自作関数　htmlspecialcharsのショートカット
@@ -26,8 +27,38 @@ require('../dbconnect.php');
   	if(isset($_POST['one_article'])){
 		$one_article=$_POST['one_article'];
 	}
-  ?>
 
+	$icon='';
+  	if(isset($_POST['icon'])){
+		$icon=$_POST['icon'];
+	}
+  
+  	$comment='';
+  	if(isset($_POST['comment'])){
+		$comment=$_POST['comment'];
+	}
+
+  if(!empty($_POST)){
+//  メッセージが入力されていた時
+       if($_POST['comment']!='')
+       {   
+       $sql=sprintf('INSERT INTO comment SET comment="%s",created=NOW()',
+
+        mysqli_real_escape_string($db,$_POST['comment'])
+        );
+        
+        mysqli_query($db,$sql)or die (mysqli_error($db));
+        
+        header('Location:inside.php');
+        exit();
+        }
+    }
+
+    //コメントを取得する。  
+  $sql=sprintf('SELECT comment.comment FROM comment');
+  $comments=mysqli_query($db,$sql)or die (mysqli_error($db));
+
+    ?>
 
 <!DOCTYPE html>
 <html>
@@ -150,38 +181,72 @@ require('../dbconnect.php');
 					<div class="post">
 
 						<div class="post-top">
-								<img src="../image/IMG_6910.jpg">
+
+								<img src="./inside_pic/<?php echo h($icon);?>">
 								<div class="top-content">
 								<h2><?php echo h($title);?></h2>
-								<p><?php echo h($content);?></p></div>
+								<p><?php echo h($content);?></p>
+							</div>
 
 						</div>
 
 						<article class="posted">
 
-							<?php echo h($one_article);?>
+							<?php echo ($one_article);?>
 
 						</article>
 
+						<form method="post" act="">
+						<div class="comment-choice">
+							<img src="../image/icchy.png">
+							
+							<textarea name="comment" placeholder="コメントを書く（任意）"></textarea>
+							<div class="aaa"><input class="comment-start" type="submit" value="コメント" name="submit"></div>
+						</div>
+						</form>
+						
+						<?php
+						while($comment=mysqli_fetch_assoc($comments)):?>
+						<div class="comment">
+							<div class="user-icon">
+							  		<img src="../image/icchy.png">
+							  		<p>Daisuke Ichikawa</h>
+							</div><!-- user-icon -->
+								
+							<div class="user-comment">
+							    <?php echo h($comment);?>
+						    </div><!-- user-comment -->
+						</div><!-- comment -->
 
-						  <div class="comment">
-						    <h3>Aさん</h3>
-						    <p>
-						      記事１へのコメントです。<br>
-						      記事１へのコメントです。<br>
-						    </p>
-						  </div>
-						  <div class="comment">
-						    <h3>Bさん</h3>
-						    <p>
-						      記事１へのコメントです。
-						    </p>
-						  </div>
-						  <p class="commment_link">
-						    投稿日：2011/6/7
-						    <a href="#">コメント</a>
-						  </p>
-					</div>
+						<?php
+						endwhile;
+						?>
+
+						<div class="comment">
+							<div class="user-icon">
+							  		<img src="../image/icchy.png">
+							  		<p>Daisuke Ichikawa</h>
+							</div><!-- user-icon -->
+							
+							<div class="user-comment">
+							    
+							    <p>
+							      Rettyさん。<br>毎日Rettyを愛用させていただいています。ひとつアプリに関して追加していただければ嬉しいなーという機能がありましたので大変恐縮ですが、おひとつご提案させてください。<br>
+							      ▼要望<br>
+							      相手と自分の共通の行ったお店がわかるような機能がほしいです。<br>
+							      というのも、会食や友達にサプライズでお店を紹介する際にできるか限り行ったことのないお店を紹介したいと思ったからです。<br>
+							    </p>
+							    <p>
+							      Rettyさん。<br>毎日Rettyを愛用させていただいています。ひとつアプリに関して追加していただければ嬉しいなーという機能がありましたので大変恐縮ですが、おひとつご提案させてください。<br>
+							      ▼要望<br>
+							      相手と自分の共通の行ったお店がわかるような機能がほしいです。<br>
+							      というのも、会食や友達にサプライズでお店を紹介する際にできるか限り行ったことのないお店を紹介したいと思ったからです。<br>
+							    </p>
+						    </div><!-- user-comment -->
+						</div><!-- comment -->
+
+
+					</div><!-- post -->
 				
 			</div><!-- kiji -->
 
