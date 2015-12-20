@@ -476,5 +476,9 @@ jQueryのスライド画像
     color:#444444;
     margin-top: 5px;
     text-align: center;
-    
+}
+
+.edit-btn2:hover{
+  background-color: #f5f5f5;
+  cursor:pointer;
 }

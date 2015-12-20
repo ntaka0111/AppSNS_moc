@@ -6,6 +6,7 @@ require('../dbconnect.php');
 
 //  //投稿を記録する.※POST送信されたものがあるかどうか
     if(!empty($_POST)){
+
 //  メッセージが入力されていた時
        if($_POST['title']!='' && $_POST['content']!='' && $_POST['one_article']!='' && $_POST['icon']!='')
        {   
@@ -19,9 +20,11 @@ require('../dbconnect.php');
         
         mysqli_query($db,$sql)or die (mysqli_error($db));
         
+
         header('Location:post.php');
         exit();
         }
+
     }
 
     //ボタンが押されてPOST送信されたら　※POST送信されたものがあるかどうか
@@ -67,7 +70,7 @@ if(!empty($_POST)){
         // $_SESSION['join']=$_POST;
         // $_SESSION['join']['icon']=$icon;
         //画面繊維
-        header('Location:check.php');
+        header('Location:post.php');
         exit();
     }
 }
@@ -94,7 +97,7 @@ if(!empty($_POST)){
                 </div>
             </header><!-- header -->
 
-            <div class=""></div>
+
 
 
              <div class="post">
@@ -128,7 +131,8 @@ if(!empty($_POST)){
                             <div class="edit-in">
                                 <h2>記事の内容を書き込んでください</h2>
                                  
-                                        <textarea id="src" class="ckeditor" name="one_article" rows="8" cols="40"></textarea>
+                                        <textarea id="src" class="ckeditor" name="one_article" rows="8" cols="40">
+                                            <?php if(isset($content)){ echo h($content); } ?></textarea>
                                         
                                         <input class="edit-btn2" name="submit" type="submit" value="投稿する">
                                 </form>

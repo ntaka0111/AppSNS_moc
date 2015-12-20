@@ -3,9 +3,8 @@
 require('../dbconnect.php');
 
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.title,article.content,article.one_article,article.icon FROM article');
-  
-  $articles=mysqli_query($db,$sql)or die (mysqli_error($db));
+  $sql=sprintf('SELECT article.title,article.content,article.one_article,article.icon FROM article ORDER BY article.created DESC');
+  $article=mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
 //自作関数　htmlspecialcharsのショートカット
@@ -55,8 +54,9 @@ require('../dbconnect.php');
     }
 
     //コメントを取得する。  
-  $sql=sprintf('SELECT comment.comment FROM comment');
+  $sql=sprintf('SELECT comment.comment FROM comment ORDER BY comment.created DESC');
   $comments=mysqli_query($db,$sql)or die (mysqli_error($db));
+
 
     ?>
 
@@ -177,7 +177,8 @@ require('../dbconnect.php');
 			</div><!-- sidebar -->
 
 			<div class="kiji">
-				
+				<?php
+				while($post=mysqli_fetch_assoc($article)):?>
 					<div class="post">
 
 						<div class="post-top">
@@ -200,13 +201,13 @@ require('../dbconnect.php');
 						<div class="comment-choice">
 							<img src="../image/icchy.png">
 							
-							<textarea name="comment" placeholder="コメントを書く（任意）"></textarea>
+							<textarea name="comment" placeholder="コメントを書く（任意）"><?php echo h($comment);?></textarea>
 							<div class="aaa"><input class="comment-start" type="submit" value="コメント" name="submit"></div>
 						</div>
 						</form>
 						
 						<?php
-						while($comment=mysqli_fetch_assoc($comments)):?>
+						while($post=mysqli_fetch_assoc($comment)):?>
 						<div class="comment">
 							<div class="user-icon">
 							  		<img src="../image/icchy.png">
@@ -214,7 +215,7 @@ require('../dbconnect.php');
 							</div><!-- user-icon -->
 								
 							<div class="user-comment">
-							    <?php echo h($comment);?>
+							    <p><?php echo h($post['comment']);?>
 						    </div><!-- user-comment -->
 						</div><!-- comment -->
 
@@ -247,7 +248,10 @@ require('../dbconnect.php');
 
 
 					</div><!-- post -->
-				
+					<div class="line"></div>
+				<?php
+				endwhile;
+				?>
 			</div><!-- kiji -->
 
 

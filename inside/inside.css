@@ -447,6 +447,12 @@ padding-left: 10px;
 .commment_link {
   text-align: right;
 }
+
+.line{
+	height: 120px;
+    background-color: #f5f5f5;
+    
+}
 /*
 =======================
 Jquery画像
