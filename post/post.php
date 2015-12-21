@@ -4,28 +4,6 @@
 require('../dbconnect.php');
 
 
-//  //投稿を記録する.※POST送信されたものがあるかどうか
-    if(!empty($_POST)){
-
-//  メッセージが入力されていた時
-       if($_POST['title']!='' && $_POST['content']!='' && $_POST['one_article']!='' && $_POST['icon']!='')
-       {   
-       $sql=sprintf('INSERT INTO article SET title="%s",content="%s",one_article="%s",icon="%s",created=NOW()',
-        mysqli_real_escape_string($db,$_POST['title']),
-        mysqli_real_escape_string($db,$_POST['content']),
-        mysqli_real_escape_string($db,$_POST['one_article']),
-        mysqli_real_escape_string($db,$_POST['icon'])
-        );
-        // date('YmdHis')//date・・・日付を文字列で取り出す。
-        
-        mysqli_query($db,$sql)or die (mysqli_error($db));
-        
-
-        header('Location:post.php');
-        exit();
-        }
-
-    }
 
     //ボタンが押されてPOST送信されたら　※POST送信されたものがあるかどうか
 if(!empty($_POST)){
@@ -46,8 +24,7 @@ if(!empty($_POST)){
         $error['icon']='blank';
     }
 
-
-    //【$_FILES】・・・スーパーグローバル変数。指定されたファイル情報を格納している変数
+       //【$_FILES】・・・スーパーグローバル変数。指定されたファイル情報を格納している変数
     //ファイルの拡張子チェック
     $fileName=$_FILES['icon'];
     if(!empty($fileName)){
@@ -56,6 +33,7 @@ if(!empty($_POST)){
         if($ext !='jpg' && $ext !='gif'&& $ext !='png'){
             $error['icon']='type';
         }
+
     }
 
         //正常に入力されていたら
@@ -63,16 +41,31 @@ if(!empty($_POST)){
         //画像をアップロードする
         // 【$image】ファイル名が日付dateで表示される。名前が一緒だといちいち名前を変更しないといけないため。
         //【move_uploaded_file】自分の持っているファイルをアップする。
-        $icon=date('YmdHis').$_FILES['icon'];
-        move_uploaded_file($_FILES['icon'],'../inside/inside_pic/'.$icon);
+        // ['tmp_name']一時的に置かれた画像データの情報が格納されているもの
+        $icon=date('YmdHis').$_FILES['icon']['name'];
+        move_uploaded_file($_FILES['icon']['tmp_name'],'../inside/inside_pic/'.$icon);
         //↑一行上の階層のmemberにアップロードしたいときは..を２個つける。【..】
         
         // $_SESSION['join']=$_POST;
         // $_SESSION['join']['icon']=$icon;
-        //画面繊維
-        header('Location:post.php');
-        exit();
     }
+
+
+//  メッセージが入力されていたら
+       if($_POST['title']!='' && $_POST['content']!='' && $_POST['one_article']!='' && $_POST['icon']!=''){   
+           $sql=sprintf('INSERT INTO article SET title="%s",content="%s",one_article="%s",icon="%s",created=NOW()',
+            mysqli_real_escape_string($db,$_POST['title']),
+            mysqli_real_escape_string($db,$_POST['content']),
+            mysqli_real_escape_string($db,$_POST['one_article']),
+            mysqli_real_escape_string($db,$_POST['icon'])
+            );
+            // date('YmdHis')//date・・・日付を文字列で取り出す。
+            mysqli_query($db,$sql)or die (mysqli_error($db));
+            
+            header('Location:post.php');
+            exit();
+        }
+
 }
 
 ?>
@@ -122,7 +115,7 @@ if(!empty($_POST)){
                                 <p><textarea name="content" rows="8" cols="40" placeholder="アプリの説明（160文字以内）"></textarea></p>
                                 </div>
                             </div>
-                            <div class="top-file"><input type="file" name="icon" size="35" /></div>
+                            <div class="top-file"><input type="file" name="icon" size="35"/></div>
 
                     </div><!-- post-top -->
 
@@ -132,7 +125,7 @@ if(!empty($_POST)){
                                 <h2>記事の内容を書き込んでください</h2>
                                  
                                         <textarea id="src" class="ckeditor" name="one_article" rows="8" cols="40">
-                                            <?php if(isset($content)){ echo h($content); } ?></textarea>
+                                           </textarea>
                                         
                                         <input class="edit-btn2" name="submit" type="submit" value="投稿する">
                                 </form>

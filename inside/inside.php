@@ -4,7 +4,7 @@ require('../dbconnect.php');
 
 //投稿を取得する。  
   $sql=sprintf('SELECT article.title,article.content,article.one_article,article.icon FROM article ORDER BY article.created DESC');
-  $article=mysqli_query($db,$sql)or die (mysqli_error($db));
+  $articles=mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
 //自作関数　htmlspecialcharsのショートカット
@@ -38,8 +38,8 @@ require('../dbconnect.php');
 	}
 
   if(!empty($_POST)){
-//  メッセージが入力されていた時
-       if($_POST['comment']!='')
+//  コメントが入力されていた時
+       if($comment!='')
        {   
        $sql=sprintf('INSERT INTO comment SET comment="%s",created=NOW()',
 
@@ -66,6 +66,7 @@ require('../dbconnect.php');
 	<meta charset="utf-8">
 	<title>AppSNS TOP</title>
 	<link rel="stylesheet" type="text/css" href="inside.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
 		<script src="../jquery-2.1.4.min.js"></script>
 	<body>
 		<div class="main">
@@ -177,23 +178,27 @@ require('../dbconnect.php');
 			</div><!-- sidebar -->
 
 			<div class="kiji">
+
+
 				<?php
-				while($post=mysqli_fetch_assoc($article)):?>
+				while($article_db=mysqli_fetch_assoc($articles)):?>
 					<div class="post">
 
 						<div class="post-top">
 
-								<img src="./inside_pic/<?php echo h($icon);?>">
-								<div class="top-content">
-								<h2><?php echo h($title);?></h2>
-								<p><?php echo h($content);?></p>
+								<img src="./inside_pic/<?php echo h($article_db['icon']);?>">
+							<div class="top-content">
+								<h2><?php echo h($article_db['title']);?></h2>
+								<p><?php echo h($article_db['content']);?></p>
 							</div>
-
+						</div>
+						<div class="favorite">
+							<i class="fa fa-heart"></i>
 						</div>
 
 						<article class="posted">
 
-							<?php echo ($one_article);?>
+							<?php echo ($article_db['one_article']);?>
 
 						</article>
 
@@ -207,7 +212,7 @@ require('../dbconnect.php');
 						</form>
 						
 						<?php
-						while($post=mysqli_fetch_assoc($comment)):?>
+						while($comment=mysqli_fetch_assoc($comments)):?>
 						<div class="comment">
 							<div class="user-icon">
 							  		<img src="../image/icchy.png">
@@ -215,7 +220,8 @@ require('../dbconnect.php');
 							</div><!-- user-icon -->
 								
 							<div class="user-comment">
-							    <p><?php echo h($post['comment']);?>
+								<!-- 上記$comment(データベース)の中のcommentを引き出すので、h($comment['comment']);となる。 -->
+							    <p><?php echo h($comment['comment']);?>
 						    </div><!-- user-comment -->
 						</div><!-- comment -->
 
@@ -274,5 +280,4 @@ require('../dbconnect.php');
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="assets/js/bootstrap.js"></script>
   <script src="assets/js/form.js"></script>
-
 
