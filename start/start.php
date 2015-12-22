@@ -10,7 +10,7 @@
 		<header>
 			<div class="container">
 				<div class="header-design">
-					<a href="../../AppSNS/top/top.php"><img src="../image/AppSNS-logo.png"></a>
+					<a href="../../top/top.php"><img src="../image/AppSNS-logo.png"></a>
 					<form>
 						<ul style="list-style:none;">
 							<li>
@@ -63,8 +63,8 @@
 				</h1>
 				<h2>
 					<p><br />AppSNSはアプリケーションのキュレーションSNSです。<br /><br />AppSNSを使ってより快適なアプリケーション生活を送りませんか？<br /><br /></p>
-					<a href="../general/gmain.php" class="btn general">一般の方はこちら</a>
-					<a href="../programmer/pmain.php" class="btn programmer">エンジニアの方はこちら</a>
+					<a href="../../general/gmain.php" class="btn general">一般の方はこちら</a>
+					<a href="../../programmer/pmain.php" class="btn programmer">エンジニアの方はこちら</a>
 				</h2>
 			</div>
 		</div>

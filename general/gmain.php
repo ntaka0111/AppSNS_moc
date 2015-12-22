@@ -79,7 +79,7 @@
 			//SESSION変数の破棄
 			unset($_SESSION['join']);
 
-			header('Location: ../top/top.html');
+			header('Location: ../../top/top.html');
 			exit();
 		}
 	}
@@ -89,6 +89,16 @@
 ?>
 <!DOCTYPE html>
 <html>
+<style>
+@font-face {
+font-family: 'nicomoji';
+src:url('../../nicomoji-plus_1.11.ttf') format('truetype');
+}
+
+body {
+font-family: '[フォント名]', sans-serif;
+}
+</style>
 <head>
 	<meta charset="utf-8">
 	<title>AppSNS 一般会員向けページ</title>
@@ -101,7 +111,7 @@
 			<div class="container">
 				<div class="header-design">
 					<div class="login-form">
-						<img src="../image/AppSNS-logo.png">
+						<img src="../../image/AppSNS-logo.png">
 						<form>
 							<ul style="list-style:none;">
 								<li>
@@ -131,7 +141,7 @@
 		<div class="top-text">
 			<div class="container">
 				<div class="main">
-					<img src="../image/AppSNS-logo.png">
+					<img src="../../image/AppSNS-logo.png">
 					<h1>あなたのコメントでアプリもっと素晴らしく</h1>
 					<p><br />AppSNSは無料のアプリケーション共有SNSです。<br /><br />公開されているアプリケーションに対するあなたのコメントが、エンジニアにとってより良いアプリケーションを作成する糧となります。<br /><br />
 					そしてあなたのコメントがより良いものであると判断されるたび、あなたにささやかなプレゼントが贈られます。</p><br /><br />

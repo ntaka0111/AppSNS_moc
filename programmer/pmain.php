@@ -90,7 +90,7 @@
 <style>
 @font-face {
 font-family: 'nicomoji';
-src:url('../../AppSNS/nicomoji-plus_1.11.ttf') format('truetype');
+src:url('../../nicomoji-plus_1.11.ttf') format('truetype');
 }
 
 body {
@@ -108,7 +108,7 @@ font-family: '[フォント名]', sans-serif;
 			<div class="container">
 				<div class="header-design">
 					<div class="login-form">
-						<img src="../image/AppSNS-logo.png">
+						<img src="../../image/AppSNS-logo.png">
 						<form>
 							<ul style="list-style:none;">
 								<li>
@@ -137,7 +137,7 @@ font-family: '[フォント名]', sans-serif;
 		<div class="top-text">
 			<div class="container">
 				<div class="main" style="text-align:center" name="message">
-					<img src="../image/AppSNS-logo.png">
+					<img src="../../image/AppSNS-logo.png">
 					<h1>あなたの作品をもっと世界へ</h1>
 					<p><br />AppSNSは無料のアプリケーション共有SNSです。<br /><br />作り上げたものを公開し、エンジニア同士互いにフィードバックを行い、より技術を高めませんか？</p><br /><br />
 					</div>

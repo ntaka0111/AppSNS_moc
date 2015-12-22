@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
+<style>
+@font-face {
+font-family: 'nicomoji';
+src:url('../../nicomoji-plus_1.11.ttf') format('truetype');
+}
+
+body {
+font-family: '[フォント名]', sans-serif;
+}
+</style>
 <head>
 	<meta charset="utf-8">
 	<title>AppSNS TOP</title>
 	<link rel="stylesheet" type="text/css" href="top.css">
-		<script src="../../AppSNS/jquery-2.1.4.min.js"></script>
+		<script src="../../jquery-2.1.4.min.js"></script>
 	<body>
 		<div class="main">
 			
 			<!-- サイドバー -->
 			<div class="sidebar">
-				<a href="../../AppSNS/profile/profile.php"><img src="../../AppSNS/image/sushi.jpg" class="profile-icon"></a>
+				<a href="../../profile/profile.php"><img src="../../image/sushi.jpg" class="profile-icon"></a>
 				<div class="profile">
 
 					<ul>
@@ -120,7 +130,7 @@
 				<div class="header-all">
 					<div class="header-design">
 						<div class="logo-img">
-							<img src="../../AppSNS/image/logo2_white.png">
+							<img src="../../image/logo2_white.png">
 						</div>
 						<a href="logout.php">ログアウト</a>
 					</div>
@@ -143,11 +153,11 @@
 					</div>
 
 					<div class="sub-contents1">
-						<img src="../../AppSNS/image/グラブル.jpg">
+						<img src="../../image/グラブル.jpg">
 					</div>
 					
 					<div class="sub-contents2">
-						<img src="../../AppSNS/image/18.jpg">
+						<img src="../../image/18.jpg">
 					</div>
 				</div><!-- contents -->
 
@@ -157,19 +167,19 @@
 						<ul>
 							<li class="application" data-no="1">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/LINE.png">
+									<img src="../../image/LINE.png">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/icchy.png"></a>
+											<a href="#"><img src="../../image/icchy.png"></a>
 											
 										</li>
 									</ul>
 									<div class="app-tc">
 										<h3>LINE</h3>
-										<div class="comment"><img src="../../AppSNS/image/sushi.jpg">
+										<div class="comment"><img src="../../image/sushi.jpg">
 												<ul>
 													<li><p>〇〇さん</p></li>
 													<li><p>〇〇いいね！</p></li>
@@ -185,20 +195,20 @@
 
 						 --><li class="application" data-no="2">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/youtube.jpg">
+									<img src="../../image/youtube.jpg">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/sushi.jpg"></a>
+											<a href="#"><img src="../../image/sushi.jpg"></a>
 										</li>
 									</ul>
 
 
 									<div class="app-tc">
 										<h3>YouTube</h3>
-										<div class="comment"><img src="../../AppSNS/image/icchy.png">
+										<div class="comment"><img src="../../image/icchy.png">
 											<ul>
 												<li><p>〇〇さん</p></li>
 												<li><p>〇〇いいね！</p></li>
@@ -215,19 +225,19 @@
 
 						 --><li class="application clear" data-no="3">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/グラブル.jpg">
+									<img src="../../image/グラブル.jpg">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/icchy.png"></a>
+											<a href="#"><img src="../../image/icchy.png"></a>
 											
 										</li>
 									</ul>
 									<div class="app-tc">
 										<h3>GRANBLUE FANTASY</h3>
-										<div class="comment"><img src="../../AppSNS/image/sushi.jpg">
+										<div class="comment"><img src="../../image/sushi.jpg">
 												<ul>
 													<li><p>〇〇さん</p></li>
 													<li><p>〇〇いいね！</p></li>
@@ -243,20 +253,20 @@
 
 						 --><li class="application" data-no="1">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/gunosy.png">
+									<img src="../../image/gunosy.png">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/sushi.jpg"></a>
+											<a href="#"><img src="../../image/sushi.jpg"></a>
 										</li>
 									</ul>
 
 
 									<div class="app-tc">
 										<h3>グノシー</h3>
-										<div class="comment"><img src="../../AppSNS/image/icchy.png">
+										<div class="comment"><img src="../../image/icchy.png">
 											<ul>
 												<li><p>〇〇さん</p></li>
 												<li><p>〇〇いいね！</p></li>
@@ -273,19 +283,19 @@
 
 						 --><li class="application" data-no="2">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/pinterest.jpg">
+									<img src="../../image/pinterest.jpg">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/icchy.png"></a>
+											<a href="#"><img src="../../image/icchy.png"></a>
 											
 										</li>
 									</ul>
 									<div class="app-tc">
 										<h3>Pintarest</h3>
-										<div class="comment"><img src="../../AppSNS/image/sushi.jpg">
+										<div class="comment"><img src="../../image/sushi.jpg">
 												<ul>
 													<li><p>〇〇さん</p></li>
 													<li><p>〇〇いいね！</p></li>
@@ -307,14 +317,14 @@
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/sushi.jpg"></a>
+											<a href="#"><img src="../../image/sushi.jpg"></a>
 										</li>
 									</ul>
 
 
 									<div class="app-tc">
 										<h3>モンスターストライク</h3>
-										<div class="comment"><img src="../../AppSNS/image/icchy.png">
+										<div class="comment"><img src="../../image/icchy.png">
 											<ul>
 												<li><p>〇〇さん</p></li>
 												<li><p>〇〇いいね！</p></li>
@@ -331,20 +341,20 @@
 
 						 --><li class="application" data-no="1">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/mercari.png">
+									<img src="../../image/mercari.png">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/sushi.jpg"></a>
+											<a href="#"><img src="../../image/sushi.jpg"></a>
 										</li>
 									</ul>
 
 
 									<div class="app-tc">
 										<h3>mercari</h3>
-										<div class="comment"><img src="../../AppSNS/image/icchy.png">
+										<div class="comment"><img src="../../image/icchy.png">
 											<ul>
 												<li><p>〇〇さん</p></li>
 												<li><p>〇〇いいね！</p></li>
@@ -361,19 +371,19 @@
 
 						 --><li class="application" data-no="2">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/パズドラ.png">
+									<img src="../../image/パズドラ.png">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/icchy.png"></a>
+											<a href="#"><img src="../../image/icchy.png"></a>
 											
 										</li>
 									</ul>
 									<div class="app-tc">
 										<h3>パズル＆ドラゴンズ</h3>
-										<div class="comment"><img src="../../AppSNS/image/sushi.jpg">
+										<div class="comment"><img src="../../image/sushi.jpg">
 												<ul>
 													<li><p>〇〇さん</p></li>
 													<li><p>〇〇いいね！</p></li>
@@ -389,20 +399,20 @@
 
 						 --><li class="application clear" data-no="3">
 								<div class="appli-image">
-									<img src="../../AppSNS/image/jumper.jpg">
+									<img src="../../image/jumper.jpg">
 									<!-- アプリイメージ -->
 								</div>
 								<div class="under">
 									<ul>
 										<li class="creater-icon">
-											<a href="#"><img src="../../AppSNS/image/sushi.jpg"></a>
+											<a href="#"><img src="../../image/sushi.jpg"></a>
 										</li>
 									</ul>
 
 
 									<div class="app-tc">
 										<h3>jumper</h3>
-										<div class="comment"><img src="../../AppSNS/image/icchy.png">
+										<div class="comment"><img src="../../image/icchy.png">
 											<ul>
 												<li><p>〇〇さん</p></li>
 												<li><p>〇〇いいね！</p></li>
