@@ -38,8 +38,13 @@
 
 			<!-- ヘッダー -->
 			<header>
-				<div class="header-design">
-					<a href="../../AppSNS/top/top.php"><img src="../../AppSNS/image/logo2_white.png"></a>
+				<div class="header-all">
+					<div class="header-design">
+						<div class="logo-img">
+							<img src="../../AppSNS/image/logo2_white.png">
+						</div>
+						<a href="logout.php">ログアウト</a>
+					</div>
 				</div>
 			</header><!-- header -->
 
