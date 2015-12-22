@@ -3,7 +3,6 @@ html,body,.main {
 	display: block;
 	margin: 0;
 	background-color: #f5f5f5;
-	font-family: nicomoji;
 }
 
 a {
@@ -12,11 +11,6 @@ a {
 
 p {
 	margin: 0;
-}
-
-h2 {
-	margin: 0;
-	padding: 0;
 }
 
 /* 中身 */
@@ -67,6 +61,8 @@ header{
 	padding-top: 60px;
 	height: 250px;
 	width: 100%;
+	border-bottom: 1px;
+	box-shadow: 0 0 2px #666,0 0 8px #222;
 	background-color: white;
 }
 
@@ -76,21 +72,21 @@ header{
 }
 
 .index .prof-info {
-	width: 68%;
+	width: 70%;
 	height: 130px;
 	margin: 0 12%;
-	padding: 30px 5% 30px 3%;
+	padding: 30px 3%;
+	display: 
 }
 
 .prof-info .info {
 	height: 130px;
+	background-color: green;
 }
 
 .info .image {
-	height: 80px;
-	width: 80px;
-	margin: 0;
-	position: fixed;
+	width: 90px;
+	float: left;
 }
 
 .index .prof-info img {
@@ -99,38 +95,18 @@ header{
 	width: 80px;
 }
 
-.labels {
-	position: relative;
-	height: 130px;
-	margin-left: 120px;
-}
-
-.mini-prof {
-	margin-top: 10px;
-	color: gray;
-}
-
-.myself {
-	margin-top: 20px;
-}
-
-.myself p {
-	line-height: 130%;
-}
-
-/* 切り替えバー */
-
-.index .under-info {
+.index .choice-box {
 	height: 60px;
-	border-top: solid 1px #EAEAEA;
+	background-color: black;
 }
 
-.under-info .choice-box {
-	height: 60px;
-	width: 76%;
-	margin: 0 12%;
+.info .labels {
+	margin-left: 90px;
+	height: 100%;
+	width: 90%;
+	float: left;
+	background-color: blue;
 }
-
 
 /* コンテンツ */
 
@@ -159,17 +135,16 @@ header{
 .contents ul {
 	list-style: none;
 	padding: 0;
-	margin: 0;
+	height: 70px;
 }
 
 .contents li.application {
 	vertical-align: top;
-	height: 420px;
+	height: 390px;
 	width: 32%;
 	margin-right: 2%;
 	margin-bottom: 2%;
 	background-color: white;
-	border-radius: 5%;
 }
 
 .contents li.application.clear {
@@ -179,7 +154,7 @@ header{
 /* 記事 */
 
 li .appli-image {
-	height: 170px;
+	height: 150px;
 }
 
 li .appli-image img {
@@ -204,6 +179,16 @@ li .under .comment img {
 
 h3 {
 	margin: 0 0 10px 0;
+}
+
+.comment ul {
+	float: left;
+	height: 38px;
+	margin-bottom: 8px;
+}
+
+.comment li {
+	margin-left: 10px;
 }
 
 .app-tc {

@@ -1,8 +1,18 @@
 html,body,.main {
+  height: 100%;
   display: block;
   margin: 0;
-  font-family: nicomoji;
+  background-color: #fff;
 }
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
 
 /* ヘッダー */
 
@@ -11,10 +21,11 @@ header{
   height: 60px;
   width: 100%;
   box-shadow: 0 0 2px #666,0 0 8px #222;
+  z-index: 100;
 }
 
 .header-design {
-  height: 60px;
+  height: 50px;
   padding: 5px 0;
   background-color: #000080;
 }
@@ -28,111 +39,186 @@ header{
 }
 
 
-/* メイン */
+/* 検索 */
 
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: none; }
+/* 中身 */
 
-a:link,
-a:visited,
-a:active {
-  font-weight: 600;
-  color: #000;
-  text-decoration: none; }
-
-
-  /*a:link:hover,*/
-/*  a:visited:hover,*/
- /* a:active:hover */
- #categories-ul li:hover{
-    background-color: #ff7f50;
-    color:#fff;
-   /* -webkit-transition: color 1s;
-    -moz-transition: color 1s;
-    -ms-transition: color 1s;
-    -o-transition: color 1s;
-    transition: color 1s; */}
-
-/* =========================
-
-		DRIBBBLE FEED 
-
-   =========================*/
-
-@media only screen and (max-width: 1000px) {
-      ul.slides li {
-        width: 33%; } }
-    @media only screen and (max-width: 767px) {
-      ul.slides li {
-        width: 50%; } }
-    ul.slides li a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: relative; }
-      ul.slides li a:hover .d-hover {
-        display: block; }
-      ul.slides li a img {
-        width: 100%; }
-      ul.slides li a p {
-        display: none; }
-
-/* =========================
-
-      投稿画面
-
-   =========================*/
-
-.zentai{
-   width:100%;
-   padding-top:70px;
+.main {
+  width: 100%;
 }
 
-.ddd {
-  width: 960px;
-  margin: 30px auto;
-}
 
-.toko-menu{
-    height:60px;
+/*=================================
+サイドバーだけ残して右側の作成
+=================================*/
+
+
+/*.kiji{
+  height: 100%;
+    width: 1198px;
     background-color: #f5f5f5;
-
-}
-
-.toko-menu-in{
-  padding-top:10px;
-  padding-bottom:10px;
-  margin: 10px;
-  padding: 10px 0;
-  width:940px;
-  height:60px;
-}
-
-.toko-menu-categories {
-  float:left;
-    z-index: -1;
-      background-color: #fff;
-    border-radius: 2px;
-    border:1px solid #d3d3d3;
-     color:#000;
-     font-size: 15px;
-  }
-    option {
-    font-weight: normal;
-    display: block;
-    padding: 0px 2px 1px;
-    white-space: pre;
-    min-height: 1.2em;
-}
-
-.toko-menu-edit {
     float: right;
-    width: 420px;
-    margin: 0;
+    margin-top: 100px;
+}
+
+
+.post {
+  width: 900px; 
+  margin-right:auto; 
+  margin-left:auto;
+  padding: 0 20px 20px 20px; 
+  background-color: #fff; 
+}*/
+/*
+=======================
+Jquery画像
+=======================*/
+/* Gallery styles */
+
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+  /* Page reset */
+  margin:0px;
+  padding:0px;
+}
+
+body{
+  /* Setting default text color, background and a font stack */
+  color:#444444;
+  font-size:13px;
+  background: #f2f2f2;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#gallery{
+  /* CSS3 Box Shadow */
+  -moz-box-shadow:0 0 3px #AAAAAA;
+  -webkit-box-shadow:0 0 3px #AAAAAA;
+  box-shadow:0 0 3px #AAAAAA;
+
+
+  /* CSS3 Rounded Corners */
+
+  -moz-border-radius-bottomleft:4px;
+  -webkit-border-bottom-left-radius:4px;
+  border-bottom-left-radius:4px;
+
+  -moz-border-radius-bottomright:4px;
+  -webkit-border-bottom-right-radius:4px;
+  border-bottom-right-radius:4px;
+
+  border:1px solid white;
+
+  background:url(img/panel.jpg) repeat-x bottom center #ffffff;
+
+  /* The width of the gallery */
+  width:600px;
+  overflow:hidden;
+}
+
+#slides{
+  /* This is the slide area */
+  height:350px;
+
+  /* jQuery changes the width later on to the sum of the widths of all the slides. */
+  width:500px;
+  overflow:hidden;
+
+}
+
+.slide{
+  float:left;
+  margin-right: auto;
+  margin-left: auto;
+  
+
+}
+
+.slide img{
+  height:100%;
+  width:100%;
+}
+
+#menu{
+  /* This is the container for the thumbnails */
+  height:80px;
+  text-align: center;
+  
+
+}
+
+ul{
+  margin:0px;
+  padding:0px;
+  background-color: #fff;
+  border:1px solid #f5f5f5;
+}
+
+li{
+  /* Every thumbnail is a li element */
+  width:60px;
+  display:inline-block;
+  list-style:none;
+  height:60px;
+  overflow:hidden;
+  margin-left: 5px;
+}
+
+li.inact:hover{
+  /* The inactive state, highlighted on mouse over */
+  background:url(img/pic_bg.png) repeat;
+}
+
+li.act,li.act:hover{
+  /* The active state of the thumb */
+  background:url(img/active_bg.png) no-repeat;
+}
+
+li.act a{
+  cursor:default;
+}
+
+.fbar{
+  /* The left-most vertical bar, next to the first thumbnail */
+  width:2px;
+  background:url(img/divider.png) no-repeat right;
+}
+
+li a{
+  display:block;
+  background:url(img/divider.png) no-repeat right;
+  height:35px;
+  padding-top:10px;
+}
+
+a img{
+  border:none;
+}
+
+/*===============================
+投稿画面
+===============================*/
+
+.kiji{
+  width:70%;
+  height:3000px;
+  background-color: #fff;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.post{
+    padding-top: 70px;
+    margin-top: 0px;
+    height: 50px;
+    background-color: #fff;
+    width:100%;
+    /*border-bottom: #808080 1px solid;*/
+}
+.toko-menu-edit{
+    float: right;
+    width: 440px;
+    margin: 2px 0 0;
 }
 
 .edit-btn{
@@ -143,314 +229,256 @@ a:active {
     line-height: 37px;
     margin: 0 0 0 5px;
     font-size: 13px;
-    background-color: #f5f5f5;
+    background-color: #00bfff;
     border-radius: 2px;
     border:1px solid #d3d3d3;
-    color:#808080;
+    color:#fff;
     padding-top: 0;
+    margin-right: 260px;
 }
 
-.edit-btn:hover{
-  background-color:#d3d3d3;
+  
+
+.post-top{
+  width:920px;
+  height:350px;
+  background-color: #fff;
+ border: 2px solid #dcdcdc;
+  padding-bottom: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
 }
 
-  .kari-col-md-12{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.8;
+.post-top h2{
+    padding: 15px;
+    color: #fff;
+    background-color: #dcdcdc;
+    border-bottom: 2px #dcdcdc solid;
+    color: #444444;
+  }
+
+.post-top img{
+  float:left;
+  height:170px;
+  width:170px;
+  margin-right: 30px;
+  margin-left: 50px;
+  margin-top: 50px;
+  border-radius: 20px;
+} /*
+.post-top input{
+height:30px;
+width:170px;
+background-color: red;
+}*/
+
+.top-content{
+  padding: 10px;
+  margin: 40px 30px 30px 30px;
+  width:580px;
+  height:150px;
+  float:left;
+  
 }
 
-
-.toko-main{
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    width:960px;
-    height:165px;
-    margin-top:20px;
-    
-    display: -webkit-inline-box;
-
-}
-
-.toko-image {
-    display: block;
-    width: 160px;
-}
-
-.toko-image img{
-  vertical-align: bottom;
-}
-
-
-.toko-text{
-    width: 785px;
-    height:165px;
-    border-radius: 2px;
-    margin-left: 15px;
-}
-
-.toko-text input{
-    padding: 10px;
-    font-size: 20px;
-    height: 45px;
-    width:100%;
-    line-height: 45px;
-    border-radius: 2px;
-    border:1px solid #d3d3d3;
-}
-
-.toko-text textarea{
-    width: 100%;
-    height: 100px;
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 14px;
-    border-radius: 2px;
-    border:1px solid #d3d3d3;
-    height:100px;
-}
-
-.toko-text-p{
-    float: right;
-    right: 0;
-    color: #000;
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.file-main{
-  margin-top: 5px;
-  margin-right:auto; 
-  margin-left:auto;
-}
-
-.file-button{
-  float: left;
-  width:230px;
-  height:18px;
-  max-width: 230px;
+.top-content h2{
   color:#000;
-  font-size: 12px;
+  border:none;
+  margin: 0px;
 
 }
 
-#file-button-input{
-display: inline-flex;
+.top-content p{
+  color:#000;
+  margin-top: 0px;
+
+}
+
+.post-title input{ 
+  height:30px;
+  width:500px;
+  margin-bottom: 5px;
 }
 
 
-.file-settei{
+.post-content textarea{
+  
+   height:100px;
+  width:500px;
+  margin-top: 25px;
+}
+
+.top-file{
+  width:920px;
+  height:10px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 40px;
+}
+
+/*テキストエリアの青い枠線を消す*/
+textarea{
+outline: none;
+font-size:15px;
+color:#808080;
+
+}
+
+input{
+  outline: none;
+  font-size:15px;
+color:#808080;
+
+}
+/*
+=================
+jQueryのスライド画像
+=================*/
+
+#gallery{
+  /* CSS3 Box Shadow */
+  -moz-box-shadow:0 0 3px #AAAAAA;
+  -webkit-box-shadow:0 0 3px #AAAAAA;
+  box-shadow:0 0 3px #AAAAAA;
+  margin-left: 30px;
+  margin-bottom: 20px;
   float: left;
-}
-
-#file-settei-input{
-  width:70px;
-  height:20px;
-  margin-right: 10px;
-  font-size: 12px;
-  background-color:#f5f5f5;
-  border:solid 1px #dcdcdc;
-  line-height: normal;
-}
 
 
-.edit-main{
-    width: 960px;
-    margin: 0 auto;
-    padding-top: 20px;
-    cursor: pointer;
+  /* CSS3 Rounded Corners */
+
+  -moz-border-radius-bottomleft:4px;
+  -webkit-border-bottom-left-radius:4px;
+  border-bottom-left-radius:4px;
+
+  -moz-border-radius-bottomright:4px;
+  -webkit-border-bottom-right-radius:4px;
+  border-bottom-right-radius:4px;
+
+  border:1px solid white;
+
+  background:url(img/panel.jpg) repeat-x bottom center #ffffff;
+
+  /* The width of the gallery */
+  width:510px;
+  overflow:hidden;
 }
 
-.edit-out{
-    margin-top: 20px;
-    border: 1px solid #e7e7e7;
-}
+#slides{
+  /* This is the slide area */
+  height:350px;
 
-.editmemu{
-    outline: 0;
-    font-weight: 400;
-    font-variant: normal;
-    background: 0 0;
-    line-height: 1.0px; 
-}
-
-
-
-/*ul*/
-.edit-tool{
-    text-align: center;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #e7e7e7;
-    width:958px;
-    height:50px;
-    font-size: 12px;
-    outline: 0;
-    font-weight: 400;
-    font-variant: normal;
-
-      display: block;
-    list-style-type: disc;
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
-}
-
-/*li*/
-.edit-tool-text{
-     float: left;
-     width:71px;
-     height:49px;
-     
-     
-}
-.edit-tool-image{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-    
-}
-.edit-tool-quote{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-headline{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-link{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-twitter{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-product{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-spot{
-     float: left;
-     width:71px;
-     height:49px;
-     border-left:#fff solid 1px;
-}
-.edit-tool-movie{
-     float: left;
-     width:71px;
-     height:49px;
-     border-right:#fff solid 1px;
-}
-
-.edit-tool i{
-  font-size:20px;
-  margin-top:7px;
-  color:#696969;
-
+  /* jQuery changes the width later on to the sum of the widths of all the slides. */
+  width:500px;
+  overflow:hidden;
 
 }
 
-.edit-tool p{
-font-size:10px;
-color:#696969;
+.slide{
+  float:left;
+  margin-right: auto;
+  margin-left: auto;
+  
+
 }
 
-
-.edit-tool li:hover{
-  background-color:#dcdcdc;
-  cursor: pointer;
+.slide img{
+  height:100%;
+  width:100%;
 }
 
-.edit-tool-text a:visited{
-    color: #666;
-    text-decoration: none;
-}
-.edit-tool-text a:link{
-    color: #666;
-    text-decoration: none;
-}
-
-.new_item{
-    padding: 20px;
-    background-color:#f5f5f5;
-    background-color: #fff;
-    width:958px;
-    height:40px;
-}
-
-
-li{
-  list-style:none;
-}
-
-
-/*メッセージ*/
-.top-text{
-  padding-top: 15%;
-  color: white;
+#menu{
+  /* This is the container for the thumbnails */
+  height:80px;
   text-align: center;
   
 }
 
-.container{
-  margin: 0 auto;
-}
-
-.main h1{
-  font-size: 45px;
-  letter-spacing: 5px;
-}
-
-.main p{
-  font-size: 14px;
-
-}
-
-.main img{
-  height: 100px;
-}
-
-.signup{
-  padding: 8px 24px;
-  background-color: #239b76;
-  float: center;
-  margin-top: 15px;
+.side-info{
+  width:250px;
+  height:350px;
+  float: left;
+  margin-left: 20px;
 }
 
 
-form {
-  float: center;
+.content-main{
+  padding-top: 30px;
+  background-color: #f5f5f5;
+  width:100%;
+  height: 100%;
 }
 
-.touroku {
-  float: center;
+
+.content-main-in{
+  padding-left: 30px;  
+
 }
 
-dt {
-  color: white;
+.side-info li{
+  display:inline-block;
+  width:220px;
+  height:30px;
+  padding: 3px;
+
+}
+/*===========================
+エディター
+===========================
+*/
+
+
+.edit-main{
+   width:920px;
+  height:500px;
+  background-color: #fff;
+  
+  padding-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  }
+
+
+
+  .edit-in {
+  width: 100%;
 }
 
-dd {
-  margin: 0;
+.edit-in h2{
+  background-color: #dcdcdc;
+  color:#444444;
+  padding: 15px;
 }
 
-.btn-signup {
-  padding: 8px 24px;
-  background-color: #239b76;
-  float: center;
+.post-content textarea{
+  margin-top: 25px;
+}
+/*
+#preview{
+  width:920px;
+  height:500px;
+  
+      margin-right: auto;
+    margin-left: auto;
+
+}
+*/
+
+.edit-btn2{ 
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 2px;
+    border:3px solid #d3d3d3;
+    color:#444444;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.edit-btn2:hover{
+  background-color: #f5f5f5;
+  cursor:pointer;
 }

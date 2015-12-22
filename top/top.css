@@ -3,7 +3,6 @@ html,body,.main {
 	display: block;
 	margin: 0;
 	background-color: #f5f5f5;
-	font-family: nicomoji;
 }
 
 a {
@@ -277,7 +276,6 @@ header{
 	margin-right: 3.5%;
 	margin-bottom: 3.5%;
 	background-color: white;
-	border-radius: 5%;
 }
 
 .contents li.application.clear {

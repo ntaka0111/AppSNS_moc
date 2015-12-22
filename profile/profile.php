@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html>
-<style>
-@font-face {
-font-family: 'nicomoji';
-src:url('../../AppSNS/nicomoji-plus_1.11.ttf') format('truetype');
-}
-
-body {
-font-family: '[フォント名]', sans-serif;
-}
-</style>
 <head>
 	<meta charset="utf-8">
 	<title>AppSNS TOP</title>
@@ -25,22 +15,19 @@ font-family: '[フォント名]', sans-serif;
 							<div class="image">
 								<img src="../../AppSNS/image/sushi.jpg">
 							</div>
+
 							<div Class="labels">
-								<h2>お寿司</h2>
-								<div class="mini-prof">
-									<p>Apple JAPAN Inc. → 金融系IT</p>
-								</div><!-- mini-prof -->
-								<div class="myself">
-									<p>京都の大学かと思いきや滋賀の大学でもあり大阪の大学とも言えるようになってしまった大学のしがない留年生でした。来年からは大崎と五反田の間にある会社でSEになります。9月に卒業し、ただいま東南アジアに留学中。大晦日に帰国予定。</p>
-								</div>
+
+								<div></div>
+
 							</div><!-- labels -->
+
 						</div><!-- info -->
 
 					</div><!-- prof-info -->
 
-					<div class="under-info">
-						<div class="choice-box">
-						</div>
+					<div class="choice-box">
+
 
 					</div><!-- choice-box -->
 
