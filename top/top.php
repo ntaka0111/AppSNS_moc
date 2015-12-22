@@ -24,7 +24,9 @@ font-family: '[フォント名]', sans-serif;
 				<div class="profile">
 
 					<ul>
-						<li><h4>お寿司</h4></li>
+						<li><h4>お寿司<?php
+						$name = $_REQUEST["name"];
+						?></h4></li>
 						<li><p>Apple JAPAN Inc. → 金融系IT</p></li>
 					</ul>
 
@@ -33,7 +35,7 @@ font-family: '[フォント名]', sans-serif;
 							<a href="#">
 								<div class="following">
 									<div class="follow-count"><h4>36</h4></div>
-									<div class="follow-caption"><p>フォロワー</p></div>
+									<div class="follow-caption"><p>フォロー</p></div>
 								</div>
 							</a>
 
@@ -127,7 +129,9 @@ font-family: '[フォント名]', sans-serif;
 			<header>
 				<div class="header-all">
 					<div class="header-design">
-						<img src="../../AppSNS/image/logo2_white.png">
+						<div class="logo-img">
+							<img src="../../AppSNS/image/logo2_white.png">
+						</div>
 						<a href="logout.php">ログアウト</a>
 					</div>
 				</div>
