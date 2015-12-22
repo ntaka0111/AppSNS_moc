@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+<style>
+@font-face {
+font-family: 'nicomoji';
+src:url('../../nicomoji-plus_1.11.ttf') format('truetype');
+}
+
+body {
+font-family: '[フォント名]', sans-serif;
+}
+</style>
 <head>
 	<meta charset="utf-8">
 	<title>AppSNS</title>
@@ -63,8 +73,8 @@
 				</h1>
 				<h2>
 					<p><br />AppSNSはアプリケーションのキュレーションSNSです。<br /><br />AppSNSを使ってより快適なアプリケーション生活を送りませんか？<br /><br /></p>
-					<a href="../../general/gmain.php" class="btn general">一般の方はこちら</a>
-					<a href="../../programmer/pmain.php" class="btn programmer">エンジニアの方はこちら</a>
+					<a href="../general/gmain.php" class="btn general">一般の方はこちら</a>
+					<a href="../programmer/pmain.php" class="btn programmer">エンジニアの方はこちら</a>
 				</h2>
 			</div>
 		</div>

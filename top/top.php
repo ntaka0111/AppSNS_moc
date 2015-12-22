@@ -118,9 +118,9 @@ font-family: '[フォント名]', sans-serif;
 							<dd><p>受験</p></dd>
 
 					</dl><!-- category-top -->
-
 				</div><!-- category -->
-					
+				</br>
+				<h4 style="text-align:center;"><a href="../../post/post.php">投稿</a></h4>
 				
 			</div><!-- sidebar -->
 
