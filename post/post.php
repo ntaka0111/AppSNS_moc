@@ -2,7 +2,7 @@
 <?php
 
 require('../dbconnect.php');
-
+date_default_timezone_set("Asia/Manila");
 
 
     //ボタンが押されてPOST送信されたら　※POST送信されたものがあるかどうか
@@ -20,13 +20,14 @@ if(!empty($_POST)){
         $error['one_article']='blank';
     }
 
-    if($_POST['icon']==''){
-        $error['icon']='blank';
-    }
+    // if($_POST['icon']==''){
+    //     $error['icon']='blank';
+    // }
 
        //【$_FILES】・・・スーパーグローバル変数。指定されたファイル情報を格納している変数
     //ファイルの拡張子チェック
-    $fileName=$_FILES['icon'];
+   
+    $fileName=$_FILES['icon']['name'];
     if(!empty($fileName)){
     $ext=substr($fileName,-3);
         
@@ -42,8 +43,8 @@ if(!empty($_POST)){
         // 【$image】ファイル名が日付dateで表示される。名前が一緒だといちいち名前を変更しないといけないため。
         //【move_uploaded_file】自分の持っているファイルをアップする。
         // ['tmp_name']一時的に置かれた画像データの情報が格納されているもの
-        $icon=date('YmdHis').$_FILES['icon']['name'];
-        move_uploaded_file($_FILES['icon']['tmp_name'],'../inside/inside_pic/'.$icon);
+        $image=date('YmdHis').$_FILES['icon']['name'];
+        move_uploaded_file($_FILES['icon']['tmp_name'],'../inside/inside_pic/'.$image);
         //↑一行上の階層のmemberにアップロードしたいときは..を２個つける。【..】
         
         // $_SESSION['join']=$_POST;
@@ -52,17 +53,19 @@ if(!empty($_POST)){
 
 
 //  メッセージが入力されていたら
-       if($_POST['title']!='' && $_POST['content']!='' && $_POST['one_article']!='' && $_POST['icon']!=''){   
+       if($_POST['title']!='' && $_POST['content']!='' && $_POST['one_article']!=''){   
            $sql=sprintf('INSERT INTO article SET title="%s",content="%s",one_article="%s",icon="%s",created=NOW()',
             mysqli_real_escape_string($db,$_POST['title']),
             mysqli_real_escape_string($db,$_POST['content']),
             mysqli_real_escape_string($db,$_POST['one_article']),
-            mysqli_real_escape_string($db,$_POST['icon'])
+            mysqli_real_escape_string($db,$image)
             );
+          
             // date('YmdHis')//date・・・日付を文字列で取り出す。
             mysqli_query($db,$sql)or die (mysqli_error($db));
             
-            header('Location:post.php');
+            header('Location:../inside/inside.php');
+            // actionのところは入れなくていい
             exit();
         }
 
@@ -79,8 +82,8 @@ if(!empty($_POST)){
         <script src="../jquery-2.1.4.min.js"></script>
        
     <body>
-        <div class="main">
-            
+       
+            <div class="main"> 
 
 
             <!-- ヘッダー -->
@@ -91,13 +94,9 @@ if(!empty($_POST)){
             </header><!-- header -->
 
 
+ 
 
-
-             <div class="post">
-                <form method="post" action="../inside/inside.php">
-                                
-            </div><!-- post -->
-
+             <form method="post" action="" enctype="multipart/form-data">
             <div class="kiji">
                   
 
@@ -123,11 +122,12 @@ if(!empty($_POST)){
                             
                             <div class="edit-in">
                                 <h2>記事の内容を書き込んでください</h2>
-                                 
+                                        
                                         <textarea id="src" class="ckeditor" name="one_article" rows="8" cols="40">
                                            </textarea>
+                                           <input class="edit-btn2" name="submit" type="submit" value="投稿する">
                                         
-                                        <input class="edit-btn2" name="submit" type="submit" value="投稿する">
+                                        
                                 </form>
                             </div><!-- post -->
                         </div><!-- edit-main -->

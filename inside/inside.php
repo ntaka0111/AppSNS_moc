@@ -3,7 +3,7 @@
 require('../dbconnect.php');
 
 //投稿を取得する。  
-  $sql=sprintf('SELECT article.title,article.content,article.one_article,article.icon FROM article ORDER BY article.created DESC');
+  $sql=sprintf('SELECT article.id,article.title,article.content,article.one_article,article.icon FROM article ORDER BY article.created DESC');
   $articles=mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
@@ -41,9 +41,10 @@ require('../dbconnect.php');
 //  コメントが入力されていた時
        if($comment!='')
        {   
-       $sql=sprintf('INSERT INTO comment SET comment="%s",created=NOW()',
+       $sql=sprintf('INSERT INTO comment SET comment="%s",article_id="%s",created=NOW()',
 
-        mysqli_real_escape_string($db,$_POST['comment'])
+        mysqli_real_escape_string($db,$_POST['comment']),
+        mysqli_real_escape_string($db,$_POST['article_id'])
         );
         
         mysqli_query($db,$sql)or die (mysqli_error($db));
@@ -52,10 +53,6 @@ require('../dbconnect.php');
         exit();
         }
     }
-
-    //コメントを取得する。  
-  $sql=sprintf('SELECT comment.comment FROM comment ORDER BY comment.created DESC');
-  $comments=mysqli_query($db,$sql)or die (mysqli_error($db));
 
 
     ?>
@@ -69,8 +66,18 @@ require('../dbconnect.php');
 	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
 		<script src="../jquery-2.1.4.min.js"></script>
 	<body>
+
 		<div class="main">
 			
+			<!-- ヘッダー -->
+			<header>
+				<div class="header-design">
+					<img src="../../AppSNS/image/logo2_white.png">
+				</div>
+			</header><!-- header -->
+
+
+
 			<!-- サイドバー -->
 			<div class="sidebar">
 				<a href="../../AppSNS/profile/profile.html"><img src="../../AppSNS/image/sushi.jpg" class="profile-icon"></a>
@@ -188,13 +195,14 @@ require('../dbconnect.php');
 
 								<img src="./inside_pic/<?php echo h($article_db['icon']);?>">
 							<div class="top-content">
-								<h2><?php echo h($article_db['title']);?></h2>
+								<h1><?php echo h($article_db['title']);?></h1>
 								<p><?php echo h($article_db['content']);?></p>
 							</div>
+							<div class="favorite">
+							<p><i class="fa fa-heart"></i>   お気に入り</p>
 						</div>
-						<div class="favorite">
-							<i class="fa fa-heart"></i>
 						</div>
+						
 
 						<article class="posted">
 
@@ -208,10 +216,19 @@ require('../dbconnect.php');
 							
 							<textarea name="comment" placeholder="コメントを書く（任意）"><?php echo h($comment);?></textarea>
 							<div class="aaa"><input class="comment-start" type="submit" value="コメント" name="submit"></div>
+						
+							
+							<input name="article_id" type="hidden" value="<?php echo h($article_db['id']);?>"
+					
 						</div>
 						</form>
 						
 						<?php
+
+						    //コメントのデータもwhileでループしている中で取得しないといけないのでここに記載する  
+							  $sql=sprintf('SELECT comment.comment FROM article LEFT JOIN comment ON article.id = comment.article_id WHERE comment.article_id = %d ORDER BY comment.created DESC',$article_db['id']);
+							  $comments=mysqli_query($db,$sql)or die (mysqli_error($db));
+
 						while($comment=mysqli_fetch_assoc($comments)):?>
 						<div class="comment">
 							<div class="user-icon">
@@ -229,29 +246,7 @@ require('../dbconnect.php');
 						endwhile;
 						?>
 
-						<div class="comment">
-							<div class="user-icon">
-							  		<img src="../image/icchy.png">
-							  		<p>Daisuke Ichikawa</h>
-							</div><!-- user-icon -->
-							
-							<div class="user-comment">
-							    
-							    <p>
-							      Rettyさん。<br>毎日Rettyを愛用させていただいています。ひとつアプリに関して追加していただければ嬉しいなーという機能がありましたので大変恐縮ですが、おひとつご提案させてください。<br>
-							      ▼要望<br>
-							      相手と自分の共通の行ったお店がわかるような機能がほしいです。<br>
-							      というのも、会食や友達にサプライズでお店を紹介する際にできるか限り行ったことのないお店を紹介したいと思ったからです。<br>
-							    </p>
-							    <p>
-							      Rettyさん。<br>毎日Rettyを愛用させていただいています。ひとつアプリに関して追加していただければ嬉しいなーという機能がありましたので大変恐縮ですが、おひとつご提案させてください。<br>
-							      ▼要望<br>
-							      相手と自分の共通の行ったお店がわかるような機能がほしいです。<br>
-							      というのも、会食や友達にサプライズでお店を紹介する際にできるか限り行ったことのないお店を紹介したいと思ったからです。<br>
-							    </p>
-						    </div><!-- user-comment -->
-						</div><!-- comment -->
-
+						
 
 					</div><!-- post -->
 					<div class="line"></div>
@@ -261,14 +256,7 @@ require('../dbconnect.php');
 			</div><!-- kiji -->
 
 
-			<!-- ヘッダー -->
-			<header>
-				<div class="header-design">
-					<img src="../../AppSNS/image/logo2_white.png">
-				</div>
-			</header><!-- header -->
-
-
+			
 
 		</div><!-- main -->
 	</body>

@@ -353,13 +353,27 @@ article h3{
 	width:920px;
 	height:40px;
 	background-color: #fff;
-	margin-top:2px;
+
 }
 
 .favorite i{
 	font-size: 30px;
 	color: orange;
-	padding-left: 20px;
+	padding-left: 60px;
+	padding-top: 8px;
+}
+
+.favorite i:hover{
+opacity: 0.8;
+cursor: pointer;
+}
+
+
+.favorite p{
+	font-size: 15px;
+	padding-left: 10px;
+	border-left:1px solid #f5f5f5;
+	
 }
 
 
@@ -370,7 +384,7 @@ article h3{
     background-color: #fff; 
     margin-top: 1px;
     border-radius: 5px;
-    min-height :150px;
+    min-height :80px;
 }
 
 .comment img{
@@ -389,7 +403,7 @@ article h3{
 float: left;
 height:100%;
 width:100px;
-padding-top: 40px;
+
 padding-left: 10px;
 }
 .user-icon p{
@@ -575,10 +589,9 @@ a img{
 
 .post-top{
 	width:920px;
-	height:220px;
+	height:285px;
 	background-color: #fff;
-	border-bottom: #000 solid 0.5px;
-	padding-bottom: 30px;
+	
 
 }
 
@@ -590,13 +603,14 @@ a img{
   margin-left: 50px;
   margin-top: 50px;
   border-radius: 20px;
+  border: 1px solid #dcdcdc;
 }	
 
 .top-content{
 	padding: 10px;
-  margin: 40px 30px 30px 30px;
+  margin: 20px 30px 0px 30px;
   width:580px;
-  height:150px;
+  height:200px;
   float:left;
   /*background-color: #fff;
   border: 1px solid #dcdcdc;*/
@@ -613,6 +627,8 @@ a img{
 .post-top p{
 	color:#000;
 	margin-top: 20px;
+	height:40px;
+	font-size: 16px;
 }
 
 

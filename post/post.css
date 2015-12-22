@@ -205,6 +205,7 @@ a img{
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 120px;
 }
 
 .post{
@@ -247,11 +248,11 @@ a img{
   padding-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
+  
 }
 
 .post-top h2{
-    padding: 15px;
+    padding: 10px;
     color: #fff;
     background-color: #dcdcdc;
     border-bottom: 2px #dcdcdc solid;
@@ -275,30 +276,32 @@ background-color: red;
 
 .top-content{
   padding: 10px;
-  margin: 40px 30px 30px 30px;
+  margin: 30px 30px 0px 30px;
   width:580px;
-  height:150px;
+  height:210px;
   float:left;
-  
+
 }
 
 .top-content h2{
-  color:#000;
   border:none;
   margin: 0px;
+  
+
 
 }
 
 .top-content p{
   color:#000;
   margin-top: 0px;
-
+  font-size: 16px;
 }
 
 .post-title input{ 
-  height:30px;
+  height: 40px;
   width:500px;
   margin-bottom: 5px;
+
 }
 
 
