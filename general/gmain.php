@@ -1,7 +1,7 @@
 <?php
-	// var_dump($_POST);
-	// $error = array();
-	require('../../dbconnect.php');
+	// // var_dump($_POST);
+	// // $error = array();
+	require('../dbconnect.php');
 
 	session_start();
 	//ボタンが送信されてPOST送信されたら
@@ -24,65 +24,79 @@
 		{
 			$error['password'] = 'blank';
 		}
-		// $fileName = $_FILES['image']['name'];
-		// if(!empty($fileName))
-		// {
-		// 	$ext = substr($fileName, -3);
-		// 	if($ext != 'jpg' && $ext != 'gif')
-		// 	{
-		// 		$error['image'] = 'type';
-		// 	}
-		// }
-	
-		//正常に入力されたら
-		// if(empty($error)) 
-		// {
-		// 	画像をアップロードする
-		// 	$image = date('YmdHis'). $_FILES['image']['name'];
-		// 	move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/'.$image);
-			
-		// 	$_SESSION['join'] = $_POST;
-		// 	$_SESSION['join']['image'] = $image;
-			
-		// 	画面遷移(画面観の移動)
-		// 	header('Location: pmain.php');
-		// 	exit();
-		// }
-		// 書き直し
-		// if($_REQEST['action'] == 'rewrite')
-		// {
-		// 	$_POST = $_SESSION ['join'];
-		// 	$error ['rewrite'] = true;
-		// }
-		// else
-		// {
-		// 	$_POST['name']='';
-		// 	$_POST['email']='';
-		// 	$_POST['password']='';
 
-
-		// 
 		// var_dump($error);
-		//POST送信が押されてデータが送られてきた時
-		if (empty($error))
+		// POST送信が押されてデータが送られてきた時
+		if(empty($error))
 		{
 			//登録処理を行う
-			$sql = sprintf(
-			'INSERT INTO members SET name="%s", email="%s", password="%s", created="%s"',
-			mysqli_real_escape_string($db, $_POST['account']),
+			$sql = sprintf('INSERT INTO members SET name="%s", email="%s", password="%s", created="%s"',
+			mysqli_real_escape_string($db, $_POST['name']),
 			mysqli_real_escape_string($db, $_POST['email']),
 			mysqli_real_escape_string($db, sha1($_POST['password'])),
 			date('Y-m-d H:i:s')
 			);
 			mysqli_query($db, $sql) or die(mysqli_error($db));
 
-			//SESSION変数の破棄
+			// //SESSION変数の破棄
 			unset($_SESSION['join']);
 
-			header('Location: ../../top/top.html');
+			header('Location: ../top/top.html');
 			exit();
 		}
 	}
+// var_dump($_POST);
+	//ログイン
+		if ($_COOKIE['email'] != '')
+	{
+		//クッキーからとりだして自動ログインできるようにする
+		$_POST['email'] = $_COOKIE['email'];
+		$_POST['password'] = $_COOKIE['password'];
+		$_POST['save'] = 'on';
+	}
+	//ログインボタンが押されてPOST送信された時
+	if(!empty($_POST))
+	{
+// var_dump($_POST['email']);
+		//ログイン処理
+		if($_POST['email'] != '' && $_POST['password'] !='')
+		{
+			//DBから今入力されたemal,passwordがmemmbers登録されているか確認するため値を取得する
+			$sql = sprintf('SELECT * FROM members WHERE email="%s" AND password="%s"',
+				mysqli_real_escape_string($db,$_POST['email']),
+				mysqli_real_escape_string($db,sha1($_POST['password']))
+			);
+			$record = mysqli_query($db,$sql) or die(mysqli_error($db));
+			//今入力されたemail,passwordがDBに存在した場合（認証）
+			if ($table = mysqli_fetch_assoc($record))
+			{
+				//ログイン成功
+				$_SESSION['id'] = $table['id'];
+				$_SESSION['time'] = time();
+
+				//ログイン情報を記録する
+				if ($_POST['save'] == 'on')
+				{
+					setcookie('email', $_POST['email'], time()+60*60*24*14);
+					setcookie('password', $_POST['password'],time()+60*60*24*14);
+				}
+				
+				header('Location: ../top/top.php');
+				exit();
+				
+			} 
+			else
+			{
+				$error['login'] = 'failed';
+
+			}
+		}
+		else
+		{
+			$error['login'] = 'blank';
+		}
+
+	}	
 ?>
 <!DOCTYPE html>
 <html>
