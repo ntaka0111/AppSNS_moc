@@ -89,7 +89,7 @@ if(!empty($_POST)){
             <!-- ヘッダー -->
             <header>
                 <div class="header-design">
-                    <img src="../../AppSNS/image/logo2_white.png">
+                    <img src="../../image/logo2_white.png">
                 </div>
             </header><!-- header -->
 
